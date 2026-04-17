@@ -1,3 +1,7 @@
+---
+import "../styles/global.css";
+---
+
 <html lang="en">
     <head>
         <!-- Some general meta tags -->
@@ -38,6 +42,15 @@
 
         <!-- Hello there, Robots! -->
         <meta name="robots" content="index, follow" />
+
+        <!-- Preload Roboto font -->
+        <link
+            rel="preload"
+            href="/fonts/Roboto-VariableFont.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin="anonymous"
+        />
     </head>
     <body>
         <slot />

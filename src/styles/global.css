@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+/* Roboto .woff2 files from Google Fonts */
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-VariableFont.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto-Italic-VariableFont.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
