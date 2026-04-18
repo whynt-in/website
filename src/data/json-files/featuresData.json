@@ -2,91 +2,91 @@
 	{
 		"title": "System Integration",
 		"icon": "arrow-path-rounded-square",
-		"description": "Connect your existing tools, platforms, and workflows into a single unified system that works seamlessly.",
+		"description": "Unify your tools, data, and workflows into a single connected system.",
 		"category": "Integrations"
 	},
 	{
 		"title": "Custom Dashboards",
 		"icon": "squares-plus",
-		"description": "Get tailored dashboards that surface the data and controls your business actually needs.",
+		"description": "Tailored dashboards that surface what matters most to your business.",
 		"category": "Analytics"
 	},
 	{
 		"title": "Workflow Automation",
 		"icon": "rectangle-stack",
-		"description": "Automate repetitive processes to reduce manual effort and improve operational efficiency.",
+		"description": "Automate repetitive processes to improve efficiency and reduce manual work.",
 		"category": "Productivity"
 	},
 	{
-		"title": "Real-Time Data Sync",
+		"title": "Real-Time Sync",
 		"icon": "arrow-trending-up",
-		"description": "Keep your data consistent and updated across systems with real-time synchronization.",
+		"description": "Keep your data consistent across systems with real-time synchronization.",
 		"category": "Integrations"
 	},
 	{
-		"title": "Scalable Architecture",
+		"title": "Scalable Systems",
 		"icon": "arrow-trending-up",
-		"description": "Systems designed to grow with your business without performance bottlenecks.",
+		"description": "Built to handle growth without performance bottlenecks.",
 		"category": "Security"
 	},
 	{
-		"title": "Secure Data Handling",
+		"title": "Secure Architecture",
 		"icon": "shield-check",
-		"description": "Built-in security practices ensure your data is protected across all systems and integrations.",
+		"description": "Strong security practices to protect your data across all systems.",
 		"category": "Security"
 	},
 	{
-		"title": "Role-Based Access",
+		"title": "Access Control",
 		"icon": "user",
-		"description": "Control permissions and access levels across your organization with structured user roles.",
+		"description": "Structured permissions to manage roles and system access.",
 		"category": "Security"
 	},
 	{
-		"title": "API-First Systems",
+		"title": "API-First Design",
 		"icon": "cube-transparent",
-		"description": "Flexible APIs that allow seamless integration with third-party tools and services.",
+		"description": "Flexible APIs for seamless integration with external services.",
 		"category": "Integrations"
 	},
 	{
 		"title": "Third-Party Integrations",
 		"icon": "rocket",
-		"description": "Integrate with CRMs, payment gateways, analytics tools, and more.",
+		"description": "Connect with CRMs, payments, analytics, and other tools.",
 		"category": "Integrations"
 	},
 	{
 		"title": "Performance Monitoring",
 		"icon": "chart-pie",
-		"description": "Track system performance and usage to identify improvements and optimize efficiency.",
+		"description": "Track system health and usage to optimize performance.",
 		"category": "Analytics"
 	},
 	{
 		"title": "Team Collaboration",
 		"icon": "user-group",
-		"description": "Enable smooth communication and coordination across teams with integrated systems.",
+		"description": "Enable better coordination with connected workflows.",
 		"category": "Productivity"
 	},
 	{
 		"title": "Continuous Support",
 		"icon": "chat-bubble-left-ellipsis",
-		"description": "Ongoing maintenance, updates, and improvements to keep your systems running reliably.",
+		"description": "Ongoing updates, fixes, and improvements for reliability.",
 		"category": "Support"
 	},
 	{
 		"title": "Custom Workflows",
 		"icon": "cursor-arrow-ripple",
-		"description": "Systems built around how your business actually operates, not generic templates.",
+		"description": "Systems designed around how your business operates.",
 		"category": "Productivity"
 	},
 	{
 		"title": "Data Backup",
 		"icon": "circle-stack",
-		"description": "Reliable backup systems to ensure your data is safe and recoverable.",
+		"description": "Reliable backups to keep your data safe and recoverable.",
 		"category": "Security"
 	},
 	{
 		"title": "Integration Ready",
 		"icon": "key",
-		"description": "Designed from the ground up to connect with any modern software stack.",
+		"description": "Built to connect with any modern software stack.",
 		"category": "Integrations"
 	}
 ]

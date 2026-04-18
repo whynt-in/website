@@ -25,7 +25,7 @@ const SEO = {
 }
 // - Page Header
 const header = {
-	title: 'Why you and your team will <strong>love</strong> foxi.',
+	title: 'Why you will <strong>love</strong> whynt.',
 	text: 'Streamline your tasks, protect your data, and enjoy working with our tools!'
 }
 ---
@@ -33,30 +33,34 @@ const header = {
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero title={header.title} text={header.text} />
 	<Feature
-		title="Insightful Analytics"
-		text="Delve into your data with precision and uncover actionable insights."
+		title="Actionable Insights"
+		text="Gain clear visibility into your systems and data to make informed business decisions."
 		data={featuresAnalytics}
 	/>
+
 	<Feature
-		title="Efficiency Unleashed"
-		text="Streamline tasks and focus on what matters with tools designed to boost your productivity."
-		data={featuresSecurity}
+		title="Operational Efficiency"
+		text="Streamline workflows and reduce manual effort with systems built for real-world operations."
+		data={featuresProductivity}
 		classes="bg-neutral-50 dark:bg-neutral-900"
 	/>
+
 	<Feature
-		title="Ultimate Data Protection"
-		text="Keep your data safe with top-notch security measures and real-time threat detection."
-		data={featuresProductivity}
+		title="Built-in Security"
+		text="Protect your systems with secure architectures and structured access control."
+		data={featuresSecurity}
 	/>
+
 	<Feature
-		title="Seamless Connectivity"
-		text="Effortlessly connect your favorite apps and automate workflows for a smoother workday."
+		title="Seamless Integrations"
+		text="Connect your tools, platforms, and workflows into one unified system."
 		data={featuresIntegrations}
 		classes="bg-neutral-50 dark:bg-neutral-900"
 	/>
+
 	<Feature
-		title="24/7 Expert Help"
-		text="Our friendly support team is always here to assist you with any questions or issues."
+		title="Ongoing Support"
+		text="Continuous maintenance and improvements to keep your systems running reliably."
 		data={featuresSupport}
 	/>
 	<CTA />
