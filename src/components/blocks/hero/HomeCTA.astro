@@ -17,14 +17,14 @@ import AvatarGroup from '../../ui/AvatarGroup.astro'
 // Content
 // - Hero Image
 import heroImage from '../../../assets/hero-01.png'
-// - Avatars
-import user1 from '../../../assets/avatars/avatar-01.webp'
-import user2 from '../../../assets/avatars/avatar-02.webp'
-import user3 from '../../../assets/avatars/avatar-03.webp'
-const avatars = [
-	{ image: { src: user1.src, alt: 'user name' }, link: '/' },
-	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
-	{ image: { src: user3.src, alt: 'user name' }, link: '/' }
+// - Tools
+import tool1 from '../../../assets/tools/what-is-website.webp'
+import tool2 from '../../../assets/tools/what-is-server.webp'
+import tool3 from '../../../assets/tools/what-is-software.webp'
+const tools = [
+	{ image: { src: tool1.src, alt: 'website development' }, link: '/' },
+	{ image: { src: tool2.src, alt: 'server management' }, link: '/' },
+	{ image: { src: tool3.src, alt: 'software development' }, link: '/' }
 ]
 ---
 
@@ -33,20 +33,20 @@ const avatars = [
 		<Col span="2" />
 		<Col span="8" align="center">
 			<ChipNotification radius="rounded-full" classes="mb-6">
-				<strong>30K+</strong> satisfied customers
-				<AvatarGroup avatars={avatars} radius="rounded-full" slot="button" />
+				<strong>200+</strong> supported tools.
+				<AvatarGroup avatars={tools} radius="rounded-full" slot="button" />
 			</ChipNotification>
-			<h1>Enhance team <strong>performance</strong> with seamless integration</h1>
+			<h1>Modern softwares for <strong>modern</strong> businesses.</h1>
 
-			<p class="pb-0 text-lg">Work smarter, not harder, with our innovative platform</p>
-			<Button size="lg" link="/">Get started for free</Button>
+			<p class="pb-0 text-lg">Built, maintained, and scaled for your business by Whynt.</p>
+			<Button size="lg" link="/contact">Get a free consultation</Button>
 		</Col>
 		<Col span="2" />
 		<Col span="2" />
 		<Col span="8">
 			<Image
 				src={heroImage}
-				alt="Foxi. The tailwind astro theme"
+				alt="Whynt. Example software image."
 				class="translate-y-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
 				format="webp"
 			/></Col
