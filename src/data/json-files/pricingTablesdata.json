@@ -1,21 +1,21 @@
 [
 	{
 		"header": {
-			"title": "Basic",
-			"subtitle": "Ideal for individual developers.",
-			"currency": "$",
-			"price": "19",
-			"priceLabel": "month, billed anually",
-			"priceMontly": "25",
+			"title": "Starter",
+			"subtitle": "For individuals and early-stage teams",
+			"currency": "₹",
+			"price": "1499",
+			"priceLabel": "month, billed annually",
+			"priceMontly": "1999",
 			"priceLabelMontly": "month",
-			"buttonName": "Try for free",
+			"buttonName": "Get started",
 			"buttonLink": "/"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Join forces with fellow architects" },
-				{ "listItem": "Present your projects with flair and captivate your audience." },
-				{ "listItem": "Immerse yourself in the dynamic realm of architecture." }
+				{ "listItem": "Basic system setup for your workflow" },
+				{ "listItem": "Essential development and maintenance support" },
+				{ "listItem": "Lightweight automation and integrations" }
 			]
 		},
 		"footer": {
@@ -26,22 +26,22 @@
 	},
 	{
 		"header": {
-			"title": "Team",
-			"subtitle": "Ideal for small teams",
-			"currency": "$",
-			"price": "29",
-			"priceLabel": "month, billed anually",
-			"priceMontly": "35",
+			"title": "Professional",
+			"subtitle": "For growing businesses and teams",
+			"currency": "₹",
+			"price": "3499",
+			"priceLabel": "month, billed annually",
+			"priceMontly": "4499",
 			"priceLabelMontly": "month",
-			"buttonName": "Try for free",
+			"buttonName": "Get started",
 			"buttonLink": "/"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Join forces with fellow architects" },
-				{ "listItem": "Present your projects with flair and captivate your audience." },
-				{ "listItem": "Immerse yourself in the dynamic realm of architecture." },
-				{ "listItem": "Unlock endless inspiration" }
+				{ "listItem": "Custom systems tailored to your operations" },
+				{ "listItem": "Workflow automation and process optimization" },
+				{ "listItem": "Team collaboration and internal tools setup" },
+				{ "listItem": "Ongoing improvements and support" }
 			]
 		},
 		"footer": {
@@ -53,25 +53,26 @@
 	{
 		"header": {
 			"title": "Enterprise",
-			"subtitle": "Ideal for companies",
-			"currency": "$",
-			"price": "49",
-			"priceLabel": "month, billed anually",
-			"priceMontly": "65",
-			"priceLabelMontly": "month",
-			"buttonName": "Try for free",
-			"buttonLink": "/"
+			"subtitle": "For scaling companies and complex systems",
+			"currency": "",
+			"price": "Let's talk",
+			"priceLabel": "",
+			"priceMontly": "Let's talk",
+			"priceLabelMontly": "",
+			"buttonName": "Contact us",
+			"buttonLink": "/contact"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Join forces with fellow architects" },
-				{ "listItem": "Present your projects with flair and captivate your audience." },
-				{ "listItem": "Immerse yourself in the dynamic realm of architecture." }
+				{ "listItem": "End-to-end system design and architecture" },
+				{ "listItem": "Dedicated engineering support team" },
+				{ "listItem": "Advanced integrations across your stack" },
+				{ "listItem": "Priority support and scaling assistance" }
 			]
 		},
 		"footer": {
-			"buttonName": "See all features",
-			"buttonLink": "/"
+			"buttonName": "Contact sales",
+			"buttonLink": "/contact"
 		},
 		"type": "basic"
 	}

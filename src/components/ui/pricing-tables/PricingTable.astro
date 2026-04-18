@@ -86,7 +86,9 @@ const { type, header, body, footer } = data
 				>
 					<span class="pricing__header-currency">{header.currency}</span>
 					<span class="pricing__header-price">{header.price}</span>
-					<span class="pricing__header-perTime">/{header.priceLabel}</span>
+					<span class="pricing__header-perTime"
+						>{header.priceLabel === '' ? '' : `/${header.priceLabel}`}</span
+					>
 				</h4>
 				<h4
 					class:list={[
@@ -96,7 +98,9 @@ const { type, header, body, footer } = data
 				>
 					<span class="pricing__header-currency">{header.currency}</span>
 					<span class="pricing__header-price">{header.priceMontly}</span>
-					<span class="pricing__header-perTime">/{header.priceLabelMontly}</span>
+					<span class="pricing__header-perTime"
+						>{header.priceLabelMontly === '' ? '' : `/${header.priceLabelMontly}`}</span
+					>
 				</h4>
 			</div>
 
