@@ -27,6 +27,7 @@ type Props = {
 	mode?: 'dark' | 'light'
 	padding?: 'both' | 'top' | 'bottom' | 'none'
 	bg?: BgProps
+	hideBgOnMobile?: boolean
 	bgPosition?: string
 	bgHeight?: string
 	classes?: string
@@ -38,6 +39,7 @@ const {
 	mode,
 	padding = 'both',
 	bg,
+	hideBgOnMobile = false,
 	bgPosition = 'center',
 	bgHeight = '100%',
 	classes
@@ -45,7 +47,7 @@ const {
 
 const bgStyle = bg
 	? {
-			backgroundImage: `url(${bg.src})`,
+			'--section-bg-image': `url(${bg.src})`,
 			height: bgHeight,
 			backgroundPosition: bgPosition
 		}
@@ -67,7 +69,7 @@ const bgStyle = bg
 		{ [`${classes}`]: classes }
 	]}
 >
-	<div class="section__bg" style={bgStyle}></div>
+	<div class:list={['section__bg', { 'section__bg--desktop-only': hideBgOnMobile }]} style={bgStyle}></div>
 	<div class="container">
 		<slot />
 	</div>
@@ -88,6 +90,15 @@ const bgStyle = bg
 	}
 	.section__bg {
 		@apply absolute inset-0 bg-cover;
+		background-image: var(--section-bg-image);
+	}
+	.section__bg--desktop-only {
+		background-image: none;
+	}
+	@media (min-width: 1024px) {
+		.section__bg--desktop-only {
+			background-image: var(--section-bg-image);
+		}
 	}
 	.container {
 		@apply relative z-[1] mx-auto px-6 [.section--fullwidth_&]:max-w-full [.section--fullwidth_&]:px-0;
