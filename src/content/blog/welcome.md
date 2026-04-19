@@ -1,27 +1,23 @@
 ---
-title: 'Welcome to Foxi!'
-pubDate: 2024-04-04T05:00:00Z
-description: "We're excited to introduce you to the ultimate productivity app designed to help you manage your tasks effortlessly to help you stay organized and efficient."
-author: 'Eleni K'
+title: 'Welcome to Whynt!'
+pubDate: 2024-01-13T05:00:00Z
+description: 'Whynt helps small and mid-sized businesses ship practical software fast, then keeps it running and improving over time.'
+author: 'Gautham Vinayachandran'
 image: '/blog/post-01-cover.png'
-tags: ['productivity', 'announcement']
+tags: ['company', 'announcement']
 ---
 
-Welcome to Foxi! We're excited to introduce you to the ultimate productivity app designed to help you manage your tasks effortlessly. Foxi combines powerful features with an intuitive interface to help you stay organized and efficient.
+Welcome to Whynt, a small-scale, product-focused tech company built to help businesses turn ideas into working systems quickly.
 
-![Foxi is here.](/blog/post-01.png)
+![Whynt is here.](/blog/post-01.png)
 
-We have rolled out new security updates to keep your data safe and secure. Learn more about our latest security enhancements and how they protect you.
+Many companies know what they need to improve but do not have an internal tech team to design, build, and maintain it. That is where Whynt fits in. We act as your software partner, not just a one-time vendor.
 
-Whether you're managing personal tasks, collaborating with a team, or tracking your projects, Foxi has you covered. Our mission is to provide you with the tools you need to succeed.
+### What you can expect from us
 
-> Foxi combines powerful features with an intuitive interface to help you stay organized and efficient!
+- **Fast iteration**: We focus on shipping usable software in short cycles.
+- **Practical engineering**: We prioritize outcomes and reliability over unnecessary complexity.
+- **Long-term support**: We stay with you after launch for fixes, updates, and improvements.
+- **Single point of contact**: You get direct communication and clear ownership.
 
-### Key Features
-
-- **In-App Messaging**: Communicate directly within the app using our integrated messaging system.
-- **Project Management**: Organize and manage your projects with ease.
-- **Time Tracking**: Keep track of the time spent on tasks to improve productivity.
-- **Customizable Dashboards**: Tailor your workspace to fit your needs.
-
-Thank you for choosing Foxi. We look forward to helping you achieve your goals!
+Whether you need a business tool, a modern website, or a cleaner system setup, Whynt is here to help you build software that grows with your business.

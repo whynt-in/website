@@ -1,21 +1,27 @@
 ---
-title: 'User feedback on foxi'
-pubDate: 2024-05-05T05:00:00Z
-description: "Your feedback is crucial to us. We are constantly striving to improve Foxi based on your suggestions. Here are some of the latest improvements.
-"
-author: 'Eleni K'
+title: 'What Client Feedback Changed in Our Delivery Process'
+pubDate: 2024-03-30T05:00:00Z
+description: 'At Whynt, feedback does not sit in a document. It directly shapes scope, timelines, and how we deliver software for SMB teams.'
+author: 'Ashtav Prabhakaran'
 image: '/blog/post-04-cover.png'
-tags: ['productivity', 'app']
+tags: ['operations', 'delivery']
 ---
 
-Your feedback is crucial to us. We are constantly striving to improve Foxi based on your suggestions. Here are some of the latest improvements we've made thanks to your valuable feedback.
+The strongest improvement loop in software is simple: listen, prioritize, ship, and review.
 
-![Foxi is here.](/blog/post-01.png)
+![Client feedback loop at Whynt.](/blog/post-01.png)
 
-### Improvements
+Over the last few projects, client feedback pushed us to improve not just what we build, but how we deliver.
 
-1. **Enhanced Performance**: We've optimized the app to run faster and more efficiently, ensuring a smooth user experience.
-2. **Bug Fixes**: Our team has addressed various bugs and issues reported by users. Thank you for helping us identify and resolve these problems.
-3. **New User Interface Tweaks**: We've made several UI adjustments to enhance usability and aesthetics. These changes are designed to make Foxi more intuitive and visually appealing.
+### What we changed
 
-Download the Foxi mobile app today from the App Store or Google Play and take your productivity with you wherever you go!
+1. **Smaller milestone deliveries**: Instead of waiting for large handoffs, we now break scope into tighter release cycles so teams see value sooner.
+2. **Decision logs**: We capture key product and technical decisions in one shared place to reduce repeated discussions.
+3. **Priority-first planning**: We align every sprint to business outcomes, not just feature count.
+4. **Post-release check-ins**: We include short review windows after launch to catch adoption issues early.
+
+### Why this matters for SMBs
+
+Small and mid-sized companies cannot afford long, unclear projects. They need consistent progress, transparent communication, and software that supports day-to-day operations quickly.
+
+That is the standard we hold at Whynt.

@@ -1,30 +1,35 @@
 ---
-title: 'Foxi Mobile App Launch'
-pubDate: 2024-04-05T05:00:00Z
-description: 'We have rolled out new security updates to keep your data safe and secure. Learn more about our latest security enhancements and how they protect you.'
-author: 'Eleni K'
+title: 'Should Your Business Build a Mobile App?'
+pubDate: 2024-01-27T05:00:00Z
+description: 'Not every company needs a mobile app immediately. Here is a practical framework we use at Whynt to decide the right time and scope.'
+author: 'Gautham Vinayachandran'
 image: '/blog/post-02-cover.png'
-tags: ['app', 'announcement']
+tags: ['development', 'mobile']
 ---
 
-The Foxi mobile app is now available! Manage your tasks and projects on the go with our new mobile app. Stay connected and productive no matter where you are.
+Mobile apps are powerful, but for many small and mid-sized businesses, a rushed app can create more cost than value. At Whynt, we usually start with one question: will a mobile app solve a real daily pain for your users?
 
-### Features
+![Mobile product decisions at Whynt.](/blog/post-02.png)
 
-- **Full Functionality on Mobile**: Access all of Foxi's features from your mobile device. Manage tasks, communicate with your team, and track your projects with ease.
-- **Sync with Desktop**: Seamlessly sync your data between the mobile app and the desktop version of Foxi. Keep your information up-to-date across all devices.
-- **Offline Mode**: Use Foxi even when you don't have an internet connection. Your changes will sync automatically once you're back online.
+### Start with the business case
 
-Download the Foxi mobile app today from the App Store or Google Play and take your productivity with you wherever you go!
+Before writing code, we look at usage patterns:
 
-![Foxi is here.](/blog/post-02.png)
+- **Where users work**: If most actions happen on the field, on the move, or at customer locations, mobile becomes important.
+- **How often users interact**: Frequent, short actions are often better on mobile.
+- **What speed matters**: If delays hurt sales, service, or operations, native mobile workflows can help.
 
-We have rolled out new security updates to keep your data safe and secure. Learn more about our latest security enhancements and how they protect you.
+### Common path we recommend
 
-### App Enhancements
+1. Build or improve a responsive web experience first.
+2. Validate usage and identify high-frequency mobile tasks.
+3. Release a focused mobile app for the most critical workflows.
+4. Iterate based on real usage, not assumptions.
 
-- **Two-Factor Authentication**: Add an extra layer of security to your account with two-factor authentication. This feature requires you to verify your identity using a second device or method.
-- **Data Encryption**: All data transmitted and stored within Foxi is now encrypted using industry-standard encryption protocols. Your information is protected from unauthorized access.
-- **Regular Security Audits**: We conduct regular security audits to identify and address potential vulnerabilities. Our commitment to security ensures that your data remains safe.
+### Where mobile delivers the most value
 
-Your security is our top priority. Thank you for trusting Foxi with your valuable data.
+- **Sales teams** managing leads and follow-ups on the road.
+- **Service businesses** updating job status and proof of work on-site.
+- **Internal ops teams** handling approvals and quick actions without opening a laptop.
+
+The goal is not to launch an app for the sake of launching one. The goal is to ship the right product at the right time and make sure it scales with your business.
