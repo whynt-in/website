@@ -10,7 +10,6 @@ import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 // - UI
 import ChipNotification from '../../ui/ChipNotification.astro'
-import { Image } from 'astro:assets'
 import Button from '../../ui/Button.astro'
 import AvatarGroup from '../../ui/AvatarGroup.astro'
 
@@ -44,11 +43,10 @@ const tools = [
 		<Col span="2" />
 		<Col span="2" />
 		<Col span="8">
-			<Image
-				src={heroImage}
+			<img
+				src={heroImage.src}
 				alt="Whynt. Example software image."
 				class="translate-y-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
-				format="webp"
 			/></Col
 		>
 		<Col span="2" />

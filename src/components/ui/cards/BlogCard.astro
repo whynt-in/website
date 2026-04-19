@@ -14,7 +14,6 @@
 
 // Components
 // - UI
-import { Image } from 'astro:assets'
 import Card from './partials/Card.astro'
 import CardBody from './partials/CardBody.astro'
 import Badge from '../Badge.astro'
@@ -39,7 +38,7 @@ const {
 ---
 
 <Card classes={classes}>
-	{image && <Image src={image} alt={title} width={600} height={400} />}
+	{image && <img src={image} alt={title} width={600} height={400} />}
 	<CardBody>
 		<h3 class="post-title">
 			<a href={link}>{title}</a>

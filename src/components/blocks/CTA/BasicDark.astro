@@ -12,7 +12,6 @@ import Col from '../../ui/Col.astro'
 import CTA from '../../ui/CTA.astro'
 import Button from '../../ui/Button.astro'
 import ChipNotification from '../../ui/ChipNotification.astro'
-import { Image } from 'astro:assets'
 import Highlight from '../../ui/Highlight.astro'
 
 // Content
@@ -31,7 +30,7 @@ import badge from '../../../assets/badge.svg'
 				bg={ctaImage}
 			>
 				<ChipNotification radius="rounded-full" classes="mb-6 box">
-					<Image src={badge} alt="Trusted Systems" class="h-12 w-12" slot="button" />
+					<img src={badge.src} alt="Trusted Systems" class="h-12 w-12" slot="button" />
 					<span class="hidden md:block"
 						>Trusted by <Highlight>30+</Highlight> growing businesses</span
 					>

@@ -8,8 +8,6 @@
 import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
-// - UI
-import { Image } from 'astro:assets'
 
 // Content
 import airtable from '../../../assets/logos/airtable-logo.svg'
@@ -65,7 +63,7 @@ const { classes } = Astro.props
 		{
 			images.map((item) => (
 				<Col>
-					<Image src={item.image} alt={item.alt} />
+					<img src={item.image.src} alt={item.alt} />
 				</Col>
 			))
 		}

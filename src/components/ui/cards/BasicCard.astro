@@ -15,7 +15,6 @@
 
 // Components
 // - UI
-import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import Card from './partials/Card.astro'
 import CardBody from './partials/CardBody.astro'
@@ -37,8 +36,8 @@ const { title = '', subtitle, titleSize = 'lg', image, icon, link, type, classes
 <Card classes={classes} link={link}>
 	{
 		image && (
-			<Image
-				src={image}
+			<img
+				src={image.src}
 				alt={title}
 				class={type === 'image-bottom' ? 'order-2' : ''}
 				width={600}
