@@ -79,7 +79,7 @@ Some jurisdictions do not allow the exclusion or limitation of liability for con
 If you have any questions about these Terms:
 
 - **Email:** support@whynt.in
-- **Address:** 123 Whynt Lane, Productivity City, PC 12345  
+- **Address:** 123 Whynt Lane, Productivity City, PC 12345
 
 ---
 

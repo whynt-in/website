@@ -1,83 +1,83 @@
 [
-  {
-    "header": {
-      "title": "Starter",
-      "subtitle": "For small businesses getting started with custom tools",
-      "currency": "₹",
-      "price": "4499",
-      "priceLabel": "month, billed annually",
-      "priceMontly": "4999",
-      "priceLabelMontly": "month",
-      "badge": "Save 10%",
-      "buttonName": "Get started",
-      "buttonLink": "/contact"
-    },
-    "body": {
-      "listItems": [
-        { "listItem": "Up to 10 hours of development or support" },
-        { "listItem": "Basic internal tools or website improvements" },
-        { "listItem": "Bug fixes and small feature updates" },
-        { "listItem": "Email support with standard response time" }
-      ]
-    },
-    "footer": {
-      "buttonName": "Contact sales",
-      "buttonLink": "/contact"
-    },
-    "type": "basic"
-  },
-  {
-    "header": {
-      "title": "Professional",
-      "subtitle": "For growing teams needing continuous development",
-      "currency": "₹",
-      "price": "13499",
-      "priceLabel": "month, billed annually",
-      "priceMontly": "14999",
-      "priceLabelMontly": "month",
-      "badge": "Save 10%",
-      "buttonName": "Get started",
-      "buttonLink": "/contact"
-    },
-    "body": {
-      "listItems": [
-        { "listItem": "Up to 40 hours of development per month" },
-        { "listItem": "Custom software and workflow automation" },
-        { "listItem": "API integrations and system improvements" },
-        { "listItem": "Priority support and faster turnaround" }
-      ]
-    },
-    "footer": {
-      "buttonName": "Contact sales",
-      "buttonLink": "/contact"
-    },
-    "type": "featured"
-  },
-  {
-    "header": {
-      "title": "Enterprise",
-      "subtitle": "For businesses building or scaling core systems",
-      "currency": "",
-      "price": "Custom",
-      "priceLabel": "",
-      "priceMontly": "Custom",
-      "priceLabelMontly": "",
-      "badge": "Custom discount",
-      "buttonName": "Get started",
-      "buttonLink": "/contact"
-    },
-    "body": {
-      "listItems": [
-        { "listItem": "Dedicated development and architecture support" },
-        { "listItem": "End-to-end system design and builds" },
-        { "listItem": "Advanced integrations and scaling solutions" },
-        { "listItem": "Fast response and ongoing collaboration" }
-      ]
-    },
-    "footer": {
-      "buttonName": "Contact sales",
-      "buttonLink": "/contact"
-    },
-    "type": "basic"
-  }
+	{
+		"header": {
+			"title": "Starter",
+			"subtitle": "For small businesses getting started with custom tools",
+			"currency": "₹",
+			"price": "4499",
+			"priceLabel": "month, billed annually",
+			"priceMontly": "4999",
+			"priceLabelMontly": "month",
+			"badge": "Save 10%",
+			"buttonName": "Get started",
+			"buttonLink": "/contact"
+		},
+		"body": {
+			"listItems": [
+				{ "listItem": "Up to 10 hours of development or support" },
+				{ "listItem": "Basic internal tools or website improvements" },
+				{ "listItem": "Bug fixes and small feature updates" },
+				{ "listItem": "Email support with standard response time" }
+			]
+		},
+		"footer": {
+			"buttonName": "Contact sales",
+			"buttonLink": "/contact"
+		},
+		"type": "basic"
+	},
+	{
+		"header": {
+			"title": "Professional",
+			"subtitle": "For growing teams needing continuous development",
+			"currency": "₹",
+			"price": "13499",
+			"priceLabel": "month, billed annually",
+			"priceMontly": "14999",
+			"priceLabelMontly": "month",
+			"badge": "Save 10%",
+			"buttonName": "Get started",
+			"buttonLink": "/contact"
+		},
+		"body": {
+			"listItems": [
+				{ "listItem": "Up to 40 hours of development per month" },
+				{ "listItem": "Custom software and workflow automation" },
+				{ "listItem": "API integrations and system improvements" },
+				{ "listItem": "Priority support and faster turnaround" }
+			]
+		},
+		"footer": {
+			"buttonName": "Contact sales",
+			"buttonLink": "/contact"
+		},
+		"type": "featured"
+	},
+	{
+		"header": {
+			"title": "Enterprise",
+			"subtitle": "For businesses building or scaling core systems",
+			"currency": "",
+			"price": "Custom",
+			"priceLabel": "",
+			"priceMontly": "Custom",
+			"priceLabelMontly": "",
+			"badge": "Custom discount",
+			"buttonName": "Get started",
+			"buttonLink": "/contact"
+		},
+		"body": {
+			"listItems": [
+				{ "listItem": "Dedicated development and architecture support" },
+				{ "listItem": "End-to-end system design and builds" },
+				{ "listItem": "Advanced integrations and scaling solutions" },
+				{ "listItem": "Fast response and ongoing collaboration" }
+			]
+		},
+		"footer": {
+			"buttonName": "Contact sales",
+			"buttonLink": "/contact"
+		},
+		"type": "basic"
+	}
 ]
