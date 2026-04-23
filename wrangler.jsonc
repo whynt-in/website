@@ -10,8 +10,4 @@
   "observability": {
     "enabled": true,
   },
-  "vars": {
-    "PUBLIC_GA_TRACKING_ID": "G-QNFF39546P",
-    "PUBLIC_GTM_ID": "GTM-N73TNZHL",
-  },
 }
