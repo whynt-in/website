@@ -48,7 +48,7 @@ const { rating = 0, size = 'base', elevated, title, text, helperText, classes } 
 				))
 			}
 		</span>
-		{text && <span>{text}</span>}
+		{text && <span class="hidden md:block">{text}</span>}
 	</span>
 	{helperText && <span class="rating__helper-text"> {helperText} </span>}
 </div>
