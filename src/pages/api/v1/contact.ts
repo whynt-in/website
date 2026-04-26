@@ -1,6 +1,15 @@
 import type { APIRoute } from 'astro'
+import { env } from 'cloudflare:workers'
 
 export const prerender = false
+
+type ContactForm = {
+	firstName: string
+	lastName: string
+	email: string
+	phone?: string
+	message: string
+}
 
 export const GET = () => {
 	return new Response('Method Not Allowed', { status: 405 })
@@ -20,7 +29,7 @@ export const POST: APIRoute = async ({ request }) => {
 			)
 		}
 
-		const body = await request.json()
+		const body = (await request.json()) as ContactForm
 
 		const { firstName, lastName, email, phone, message } = body
 
@@ -34,8 +43,15 @@ export const POST: APIRoute = async ({ request }) => {
 			)
 		}
 
-		// TODO: Store in Database
-		console.log('Contact Form Submission: \n', body)
+		await env.DB.prepare(
+			`
+			INSERT INTO contact_form_submissions
+        	(first_name, last_name, email, phone_number, message)
+        	VALUES (?, ?, ?, ?, ?)
+		`
+		)
+			.bind(firstName, lastName, email, phone || null, message)
+			.run()
 
 		return new Response(
 			JSON.stringify({

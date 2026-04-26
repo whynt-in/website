@@ -44,6 +44,12 @@ const { classes } = Astro.props
 </Card>
 
 <script>
+	type ContactApiResponse = {
+		success: boolean
+		message: string
+		error: string
+	}
+
 	const form = document.getElementById('contactForm') as HTMLFormElement | null
 
 	if (form) {
@@ -68,7 +74,7 @@ const { classes } = Astro.props
 					},
 					body: JSON.stringify(data)
 				})
-					.then((response) => response.json())
+					.then((response) => response.json() as Promise<ContactApiResponse>)
 					.then((result) => {
 						const loaderElement = document.querySelector('div.modal__loader')
 						if (loaderElement) {
