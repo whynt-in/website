@@ -20,7 +20,9 @@ export function initiateTurnstile() {
 				turnstileState.turnstileToken = token
 				turnstileState.isCAPTCHAValidated = true
 				document.querySelector('button[type="submit"]')?.removeAttribute('disabled')
-			}
+			},
+			appearance: 'always',
+			theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light'
 		})
 	})
 }

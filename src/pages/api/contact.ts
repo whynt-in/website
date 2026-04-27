@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro'
 import { env } from 'cloudflare:workers'
+import { validateTurnstile } from '../../helpers/turnstile_validate'
 
 export const prerender = false
 
@@ -45,6 +46,19 @@ export const POST: APIRoute = async ({ request }) => {
 				JSON.stringify({
 					success: false,
 					error: 'Missing Turnstile token 🤖'
+				}),
+				{ status: 400 }
+			)
+		}
+
+		const validationResponse = await validateTurnstile(turnstileToken)
+		// @ts-ignore
+		if (!validationResponse.success) {
+			return new Response(
+				JSON.stringify({
+					success: false,
+					// @ts-ignore
+					error: validationResponse.error || 'Invalid CAPTCHA 🤖'
 				}),
 				{ status: 400 }
 			)
