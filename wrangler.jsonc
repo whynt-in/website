@@ -3,7 +3,7 @@
   "compatibility_date": "2026-04-19",
   "compatibility_flags": ["global_fetch_strictly_public"],
   "name": "corporate-website",
-  "main": "@astrojs/cloudflare/entrypoints/server",
+  "main": "src/worker.ts",
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
@@ -34,4 +34,18 @@
     "PUBLIC_GA_TRACKING_ID": "G-QNFF39546P",
     "PUBLIC_GTM_ID": "GTM-N73TNZHL",
   },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "RATE_LIMITER",
+        "class_name": "RateLimiter",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["RateLimiter"],
+    },
+  ],
 }
