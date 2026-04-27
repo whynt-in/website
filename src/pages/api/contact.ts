@@ -82,7 +82,7 @@ export const POST: APIRoute = async ({ request }) => {
 			{ status: 200 }
 		)
 	} catch (error) {
-		// TODO: Log error to monitoring service
+		console.error('Error processing contact form submission:', error)
 		return new Response(
 			JSON.stringify({
 				success: false,
