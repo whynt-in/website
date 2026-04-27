@@ -38,74 +38,20 @@ const { classes } = Astro.props
 				<InputField type="tel" id="phone" label="Phone Number" />
 			</FormField>
 			<FormField><TextArea id="message" label="Type your message here ..." required /></FormField>
-			<Button style="primary" type="submit">Submit</Button>
+			<div class="flex flex-wrap items-center gap-8">
+				<div id="turnstile-container"></div>
+				<Button style="primary" size="lg" type="submit" disabled>
+					<span class="text-lg">Submit</span>
+				</Button>
+			</div>
 		</Form>
 	</CardBody>
 </Card>
 
 <script>
-	type ContactApiResponse = {
-		success: boolean
-		message: string
-		error: string
-	}
+	import { initiateTurnstile, turnstileState } from './_helpers/cf_turnstile'
+	import { addContactFormSubmitListener } from './_helpers/form_submit_handler'
 
-	const form = document.getElementById('contactForm') as HTMLFormElement | null
-
-	if (form) {
-		form.addEventListener('submit', (event) => {
-			event.preventDefault()
-
-			const modal = document.getElementById('accessory-modal')
-			if (!modal) {
-				console.error('Modal element not found')
-				return
-			}
-			modal.classList.add('open')
-
-			const formData = new FormData(form)
-			const data = Object.fromEntries(formData.entries())
-
-			setTimeout(() => {
-				fetch('/api/v1/contact', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify(data)
-				})
-					.then((response) => response.json() as Promise<ContactApiResponse>)
-					.then((result) => {
-						const loaderElement = document.querySelector('div.modal__loader')
-						if (loaderElement) {
-							loaderElement.remove()
-						}
-
-						const titleElement = document.querySelector('h2.modal__title')
-						if (titleElement) {
-							titleElement.textContent = result.message || result.error
-						}
-
-						const innerTextElement = document.querySelector('div.modal__inner_text')
-						if (innerTextElement) {
-							if (result.success) {
-								innerTextElement.textContent =
-									'Thank you for contacting Whynt. We will get back to you as soon as possible.'
-							} else {
-								innerTextElement.textContent = 'Oops! Something went wrong. Please try again later.'
-							}
-						}
-
-						const buttonElement = document.querySelector('div.modal__inner_button')
-						if (buttonElement) {
-							buttonElement.classList.remove('hidden')
-						}
-					})
-					.catch((error) => {
-						// TODO: Handle non-server error state in the modal
-						console.error('Error:', error)
-					})
-			}, 1000)
-		})
-	}
+	initiateTurnstile()
+	addContactFormSubmitListener(turnstileState)
 </script>

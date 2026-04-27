@@ -9,6 +9,7 @@ type ContactForm = {
 	email: string
 	phone?: string
 	message: string
+	turnstileToken: string
 }
 
 export const GET = () => {
@@ -18,7 +19,6 @@ export const GET = () => {
 export const POST: APIRoute = async ({ request }) => {
 	try {
 		const contentType = request.headers.get('content-type')
-
 		if (!contentType?.includes('application/json')) {
 			return new Response(
 				JSON.stringify({
@@ -30,14 +30,21 @@ export const POST: APIRoute = async ({ request }) => {
 		}
 
 		const body = (await request.json()) as ContactForm
-
-		const { firstName, lastName, email, phone, message } = body
+		const { firstName, lastName, email, phone, message, turnstileToken } = body
 
 		if (!firstName || !lastName || !email || !message) {
 			return new Response(
 				JSON.stringify({
 					success: false,
 					error: 'Missing required fields 🟡'
+				}),
+				{ status: 400 }
+			)
+		} else if (!turnstileToken) {
+			return new Response(
+				JSON.stringify({
+					success: false,
+					error: 'Missing Turnstile token 🤖'
 				}),
 				{ status: 400 }
 			)
