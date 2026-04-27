@@ -1,17 +1,48 @@
 {
-	"compatibility_date": "2026-04-19",
-	"compatibility_flags": ["global_fetch_strictly_public"],
-	"name": "corporate-website",
-	"main": "@astrojs/cloudflare/entrypoints/server",
-	"assets": {
-		"directory": "./dist",
-		"binding": "ASSETS"
-	},
-	"observability": {
-		"enabled": true
-	},
-	"vars": {
-		"PUBLIC_GA_TRACKING_ID": "G-QNFF39546P",
-		"PUBLIC_GTM_ID": "GTM-N73TNZHL"
-	}
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "compatibility_date": "2026-04-19",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "name": "corporate-website",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+  },
+  "observability": {
+    "enabled": false,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true,
+      "invocation_logs": true,
+    },
+    "traces": {
+      "enabled": true,
+      "persist": true,
+      "head_sampling_rate": 1,
+    },
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "whynt_corporate_prod",
+      "database_id": "f52e1692-28fb-44fe-a605-3a51d1f78656",
+    },
+  ],
+  "env": {
+    "production": {
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "whynt_corporate_prod",
+          "database_id": "f52e1692-28fb-44fe-a605-3a51d1f78656",
+        },
+      ],
+      "vars": {
+        "PUBLIC_GA_TRACKING_ID": "G-QNFF39546P",
+        "PUBLIC_GTM_ID": "GTM-N73TNZHL",
+      },
+    },
+  },
 }

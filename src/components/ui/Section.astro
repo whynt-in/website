@@ -69,7 +69,11 @@ const bgStyle = bg
 		{ [`${classes}`]: classes }
 	]}
 >
-	<div class:list={['section__bg', { 'section__bg--desktop-only': hideBgOnMobile }]} style={bgStyle}></div>
+	<div
+		class:list={['section__bg', { 'section__bg--desktop-only': hideBgOnMobile }]}
+		style={bgStyle}
+	>
+	</div>
 	<div class="container">
 		<slot />
 	</div>

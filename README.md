@@ -36,12 +36,12 @@ Most of the site is content-driven rather than app-driven, so the page files usu
 
 ## Getting Started
 
-| Command | What it does |
-| --- | --- |
-| `npm install` | Installs all project dependencies. |
-| `npm run dev` | Starts the local Astro development server. |
-| `npm run build` | Runs type checking and creates a production build. |
-| `npm run preview` | Serves the production build locally for review. |
+| Command           | What it does                                       |
+| ----------------- | -------------------------------------------------- |
+| `npm install`     | Installs all project dependencies.                 |
+| `npm run dev`     | Starts the local Astro development server.         |
+| `npm run build`   | Runs type checking and creates a production build. |
+| `npm run preview` | Serves the production build locally for review.    |
 
 After running `npm run dev`, open the local URL shown in the terminal.
 

@@ -1,0 +1,21 @@
+---
+import Button from '../../ui/Button.astro'
+import Loading from '../../ui/Loading.astro'
+import Modal from '../../ui/Modal.astro'
+
+type Props = {
+	id: string
+}
+
+const { id } = Astro.props
+---
+
+<Modal id={id} title="Sending your message...">
+	<div class="modal__inner_text" aria-live="polite" role="status"></div>
+	<div class="modal__loader flex h-full w-full items-center justify-center">
+		<Loading />
+	</div>
+	<div class="modal__inner_button mt-4 hidden">
+		<Button style="primary" size="lg" link="/"> Go back home </Button>
+	</div>
+</Modal>

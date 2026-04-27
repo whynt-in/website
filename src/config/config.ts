@@ -21,9 +21,9 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: "Whynt — Custom Software That Scales With Your Business",
+	siteTitle: 'Whynt — Custom Software That Scales With Your Business',
 	siteDescription:
-		"Whynt builds and maintains custom software, websites, and integrations for businesses that need reliable, scalable systems.",
+		'Whynt builds and maintains custom software, websites, and integrations for businesses that need reliable, scalable systems.',
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/logo.svg',

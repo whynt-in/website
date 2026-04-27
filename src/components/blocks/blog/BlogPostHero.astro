@@ -32,16 +32,18 @@ const { tags, title, author, publishDate } = Astro.props
 		<Col span="12" align="center">
 			<header class="post-header">
 				<Breadcrumbs classes="mb-6" />
-				<h1 class="post-header__title">
+				<h1 class="post-header__title text-left md:text-center">
 					{title}
 				</h1>
 				{
 					author ? (
-						<p class="page-header__text">
+						<p class="page-header__text text-left md:text-center">
 							Written by, {author} {publishDate && 'on ' + publishDate}
 						</p>
 					) : (
-						publishDate && <p class="page-header__text">Published on, {publishDate}</p>
+						publishDate && (
+							<p class="page-header__text text-left md:text-center">Published on, {publishDate}</p>
+						)
 					)
 				}
 			</header>

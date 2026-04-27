@@ -25,20 +25,33 @@ const { classes } = Astro.props
 
 <Card classes={classes}>
 	<CardBody>
-		<Form>
+		<Form id="contactForm">
 			<h2 class="text-2xl">Fill in the form below to continue.</h2>
 			<FormField>
-				<InputField type="text" id="firstName" label="First Name" />
-				<InputField type="text" id="lastName" label="Last Name" />
+				<InputField type="text" id="firstName" label="First Name" required />
+				<InputField type="text" id="lastName" label="Last Name" required />
 			</FormField>
 			<FormField>
-				<InputField type="email" id="email" label="Email" required value="someone@example.com" />
+				<InputField type="email" id="email" label="Email" required />
 			</FormField>
 			<FormField>
 				<InputField type="tel" id="phone" label="Phone Number" />
 			</FormField>
-			<FormField><TextArea id="message" label="Type your message here ..." /></FormField>
-			<Button style="primary" type="submit">Submit</Button>
+			<FormField><TextArea id="message" label="Type your message here ..." required /></FormField>
+			<div class="flex flex-wrap items-center gap-8">
+				<div id="turnstile-container"></div>
+				<Button style="primary" size="lg" type="submit" disabled>
+					<span class="text-lg">Submit</span>
+				</Button>
+			</div>
 		</Form>
 	</CardBody>
 </Card>
+
+<script>
+	import { initiateTurnstile, turnstileState } from './_helpers/cf_turnstile'
+	import { addContactFormSubmitListener } from './_helpers/form_submit_handler'
+
+	initiateTurnstile()
+	addContactFormSubmitListener(turnstileState)
+</script>

@@ -23,6 +23,7 @@ type Props = {
 	variation?: 'outline' | 'link'
 	elevated?: boolean
 	classes?: string
+	disabled?: boolean
 }
 const {
 	type = 'button',
@@ -32,7 +33,8 @@ const {
 	style = 'primary',
 	variation,
 	elevated,
-	classes
+	classes,
+	disabled
 } = Astro.props
 ---
 
@@ -64,6 +66,7 @@ const {
 				{ [`${classes}`]: classes }
 			]}
 			{...(modal ? { 'data-modal': modal } : {})}
+			{...(disabled ? { disabled: true } : {})}
 		>
 			<slot />
 		</button>

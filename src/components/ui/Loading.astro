@@ -1,0 +1,20 @@
+---
+// Loading Component
+// Description: Animated loading indicator with three bouncing dots
+// Props:
+// - color: Tailwind color class for the dots (default: "bg-blue-700")
+
+type Props = {
+	color?: string
+}
+
+const { color = 'bg-primary-500' } = Astro.props
+---
+
+<!-- From Uiverse.io by Javierrocadev -->
+<div class="flex flex-row gap-2" role="status" aria-live="polite" aria-label="Loading">
+	<div class={`h-4 w-4 animate-bounce rounded-full ${color}`}></div>
+	<div class={`h-4 w-4 animate-bounce rounded-full ${color} [animation-delay:-.3s]`}></div>
+	<div class={`h-4 w-4 animate-bounce rounded-full ${color} [animation-delay:-.5s]`}></div>
+	<span class="sr-only">Loading...</span>
+</div>
