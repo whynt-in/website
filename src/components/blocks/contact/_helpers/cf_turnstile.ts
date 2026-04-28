@@ -53,7 +53,8 @@ function renderTurnstile() {
 			turnstileState.turnstileToken = null
 			turnstileState.isCAPTCHAValidated = false
 			document.querySelector('button[type="submit"]')?.setAttribute('disabled', 'true')
-		}
+		},
+		size: "flexible"
 	})
 }
 

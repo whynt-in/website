@@ -38,8 +38,8 @@ const { classes } = Astro.props
 				<InputField type="tel" id="phone" label="Phone Number" />
 			</FormField>
 			<FormField><TextArea id="message" label="Type your message here ..." required /></FormField>
-			<div class="flex flex-wrap items-center gap-8">
-				<div id="turnstile-container"></div>
+			<div class="flex flex-col gap-4">
+				<div id="turnstile-container" class="max-w-full overflow-scroll"></div>
 				<Button style="primary" size="lg" type="submit" disabled>
 					<span class="text-lg">Submit</span>
 				</Button>
