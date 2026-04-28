@@ -1,8 +1,10 @@
 ---
-// Components
-// - Layout
+// Pricing page with plans, features, testimonials,
+// FAQ, and call-to-action sections
+
+// Page layout and pricing sections
 import Layout from '../layouts/Layout.astro'
-// - UI
+// Hero, pricing plans, proof, features, testimonials
 import Hero from '../components/blocks/hero/PageHeader.astro'
 import Price from '../components/blocks/pricing/PricingColumns.astro'
 import SocialProof from '../components/blocks/socialproof/Basic.astro'
@@ -11,19 +13,18 @@ import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
 import Feature from '../components/blocks/features/FeatureList.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 
-// Content
-// - SEO
+// Pricing page SEO metadata
 const SEO = {
 	title: 'Whynt | Pricing and Engagement',
 	description:
 		'Learn how Whynt scopes custom projects, support retainers, and ongoing improvements for software, websites, and integrations.'
 }
-// - Page Header
+// Pricing hero section title and description
 const header = {
 	title: 'Choose a plan that <strong>fits</strong> you.',
 	text: 'All plans include a 7-day money-back guarantee.'
 }
-// - Testimonial data
+// Testimonial section content and background
 import testimonialBackground from '../assets/testimonial-bg-02.webp'
 const testimonialData = {
 	blockquote:

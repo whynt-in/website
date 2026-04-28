@@ -1,5 +1,7 @@
 import type { APIRoute } from 'astro'
 
+// Generate robots.txt for search engine crawlers
+// with sitemap reference for discovery
 const robotsTxt = `
 User-agent: *
 Allow: /

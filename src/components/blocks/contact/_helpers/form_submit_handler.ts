@@ -1,20 +1,24 @@
 import type { TurnstileState } from './cf_turnstile'
 import { setModalState } from './modal_manager'
 
+// Contact form API response structure
 type ContactApiResponse = {
 	success: boolean
 	message: string
 	error: string
 }
 
+// Attach form submission listener and validation
 export function addContactFormSubmitListener(turnstileState: TurnstileState) {
 	if (typeof window === 'undefined' || typeof document === 'undefined') {
 		throw new Error('addContactFormSubmitListener can only be called in a browser environment')
 	}
 	const form = document.getElementById('contactForm')! as HTMLFormElement
+	// Submit handler with CAPTCHA validation
 	form.addEventListener('submit', (event) => {
 		event.preventDefault()
 
+		// Validate CAPTCHA before processing submission
 		if (!turnstileState.turnstileToken || !turnstileState.isCAPTCHAValidated) {
 			handleIllegalSubmission(true)
 			return
@@ -22,6 +26,7 @@ export function addContactFormSubmitListener(turnstileState: TurnstileState) {
 
 		handleIllegalSubmission(false)
 
+		// Extract form data and add CAPTCHA token
 		const data = Object.fromEntries(new FormData(form).entries())
 		data['turnstileToken'] = turnstileState.turnstileToken
 
@@ -29,6 +34,7 @@ export function addContactFormSubmitListener(turnstileState: TurnstileState) {
 	})
 }
 
+// Show validation error or submission status in modal
 function handleIllegalSubmission(isIllegalSubmission: boolean) {
 	setModalState({
 		isOpen: true,
@@ -41,6 +47,7 @@ function handleIllegalSubmission(isIllegalSubmission: boolean) {
 	})
 }
 
+// Submit form data to contact API endpoint
 function fetchContactApi(formData: Record<string, FormDataEntryValue>) {
 	fetch('/api/contact', {
 		method: 'POST',

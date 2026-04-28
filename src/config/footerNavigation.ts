@@ -1,6 +1,5 @@
-// Footer Navigation
-// ------------
-// Description: The footer navigation data for the website.
+// Footer navigation structure with company
+// info, category links, and copyright text
 export interface Logo {
 	src: string
 	alt: string

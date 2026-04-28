@@ -2,8 +2,10 @@ import type { APIRoute } from 'astro'
 import { env } from 'cloudflare:workers'
 import { validateTurnstile } from '../../helpers/turnstile_validate'
 
+// Disable pre-rendering for dynamic API endpoint
 export const prerender = false
 
+// Contact form submission structure
 type ContactForm = {
 	firstName: string
 	lastName: string
@@ -13,12 +15,15 @@ type ContactForm = {
 	turnstileToken: string
 }
 
+// Only POST method allowed for form submissions
 export const GET = () => {
 	return new Response('Method Not Allowed', { status: 405 })
 }
 
+// Process contact form submission with validation
 export const POST: APIRoute = async ({ request }) => {
 	try {
+		// Validate request content type
 		const contentType = request.headers.get('content-type')
 		if (!contentType?.includes('application/json')) {
 			return new Response(
@@ -30,9 +35,11 @@ export const POST: APIRoute = async ({ request }) => {
 			)
 		}
 
+		// Parse and extract form data
 		const body = (await request.json()) as ContactForm
 		const { firstName, lastName, email, phone, message, turnstileToken } = body
 
+		// Check required fields (phone is optional)
 		if (!firstName || !lastName || !email || !message) {
 			return new Response(
 				JSON.stringify({
@@ -51,6 +58,7 @@ export const POST: APIRoute = async ({ request }) => {
 			)
 		}
 
+		// Verify CAPTCHA token with Cloudflare Turnstile
 		const validationResponse = await validateTurnstile(turnstileToken)
 		// @ts-ignore
 		if (!validationResponse.success) {
@@ -64,6 +72,7 @@ export const POST: APIRoute = async ({ request }) => {
 			)
 		}
 
+		// Save submission to database
 		await env.DB.prepare(
 			`
 			INSERT INTO contact_form_submissions

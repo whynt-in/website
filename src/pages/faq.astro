@@ -1,28 +1,30 @@
 ---
-// Components
-// - Layout
+// FAQ page with categorized questions about
+// pricing, integrations, and services
+
+// Page layout and FAQ components
 import Layout from '../layouts/Layout.astro'
-// - UI
+// Hero, FAQ sections, content, and CTA
 import Hero from '../components/blocks/hero/PageHeader.astro'
 import FAQ from '../components/blocks/FAQ/FaqSticky.astro'
 import TextImage from '../components/blocks/basic/TextImage.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 
-// Data
+// Load and group FAQ by category
 import faqData from '../data/json-files/faqData.json'
-// - FAQ Categories
+// Filter FAQ questions by category for sections
 const faqPricing = faqData.filter((faq) => faq.category === 'pricing')
 const faqIntegrations = faqData.filter((faq) => faq.category === 'integrations')
 
-// Content
+// FAQ page assets and SEO metadata
 import faqImage1 from '../assets/faq/faq-01.png'
-// - SEO
+
 const SEO = {
 	title: 'Whynt | Frequently Asked Questions',
 	description:
 		'Find answers about Whynt pricing, project scope, integrations, support, and the types of software we build for small and mid-sized businesses.'
 }
-// - Page Header
+// FAQ hero section title and description
 const header = {
 	title: 'Get Answers to Your <strong>Whynt</strong> Questions.',
 	text: 'Find answers to common questions about Whynt '

@@ -1,29 +1,30 @@
 ---
-// Components
-// - Layout
+// Features page with categorized capabilities
+// across analytics, productivity, security, etc.
+
+// Page layout and feature sections
 import Layout from '../layouts/Layout.astro'
-// - UI
+// Feature showcase and CTA
 import Feature from '../components/blocks/features/FeatureSticky.astro'
 import Hero from '../components/blocks/hero/PageHeader.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 
-// Data
+// Load and categorize features from data file
 import featuresData from '../data/json-files/featuresData.json'
-// - Feature Categories
+// Group features by category for display
 const featuresAnalytics = featuresData.filter((feature) => feature.category === 'Analytics')
 const featuresProductivity = featuresData.filter((feature) => feature.category === 'Productivity')
 const featuresSecurity = featuresData.filter((feature) => feature.category === 'Security')
 const featuresIntegrations = featuresData.filter((feature) => feature.category === 'Integrations')
 const featuresSupport = featuresData.filter((feature) => feature.category === 'Support')
 
-// Content
-// - SEO
+// Features page SEO metadata
 const SEO = {
 	title: 'Whynt | Services and Capabilities',
 	description:
 		'Explore Whynt’s core capabilities across custom software development, website development, maintenance, integrations, and support.'
 }
-// - Page Header
+// Features hero section title and description
 const header = {
 	title: 'Why you will <strong>love</strong> whynt.',
 	text: 'Streamline your tasks, protect your data, and enjoy working with our tools!'

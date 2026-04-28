@@ -1,14 +1,14 @@
 ---
-// Blog Post Page
-// ------------
-// Description: The blog post page.
+// Blog post page with dynamic routing for
+// individual posts from the content collection
 
-// Components
-// - Layout
+// Post layout and content rendering
 import Layout from '../../layouts/PostLayout.astro'
 
-// Data
+// Get all blog entries and render markdown
 import { getCollection, render } from 'astro:content'
+
+// Generate static paths for all blog posts
 export async function getStaticPaths() {
 	const blogEntries = await getCollection('blog')
 	return blogEntries.map((entry) => ({
@@ -16,6 +16,8 @@ export async function getStaticPaths() {
 		props: { entry }
 	}))
 }
+
+// Get current post entry and render markdown
 const { entry } = Astro.props
 const { Content } = await render(entry)
 ---

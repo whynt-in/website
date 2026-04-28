@@ -1,10 +1,13 @@
-// Google tracking
-// - Google Site Verification: for Google Search Console
-// - Google Analytics Measurement ID: for Google Analytics
-// - Google Tag Manager ID: for Google Tag Manager
+// Analytics configuration for Google services
+// Site verification, Analytics, & Tag Manager IDs
 
 import { env } from 'cloudflare:workers'
 
+// Empty string - fill with actual verification code
 export const googleSiteVerification = ''
+
+// GA tracking ID loaded from Cloudflare env
 export const googleAnalyticsMeasurementID = env.PUBLIC_GA_TRACKING_ID
+
+// GTM container ID loaded from Cloudflare env
 export const googleTagManagerID = env.PUBLIC_GTM_ID

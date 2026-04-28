@@ -1,3 +1,4 @@
+// Modal state interface for form feedback display
 export type ModalState = {
 	isOpen: boolean
 	loadingElementVisible: boolean
@@ -6,6 +7,7 @@ export type ModalState = {
 	buttonVisible: boolean
 }
 
+// Cache DOM elements for modal and its content
 export const modalElements = {
 	modal: document.getElementById('accessory-modal')!,
 	loading: document.querySelector('div.modal__loader')!,
@@ -19,6 +21,7 @@ export function setModalState(state: ModalState) {
 		throw new Error('setModalState can only be called in a browser environment')
 	}
 
+	// Update modal visibility and content state
 	modalElements.modal.classList.toggle('open', state.isOpen)
 	modalElements.loading.classList.toggle('hidden', !state.loadingElementVisible)
 	modalElements.title.textContent = state.title

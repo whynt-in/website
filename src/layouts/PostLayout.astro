@@ -1,15 +1,15 @@
 ---
-// Imports
+// Blog post wrapper layout with post-specific
+// header, metadata, and inherited base styling
 const { frontmatter } = Astro.props
 
-//Layout Components
+// Reuse base layout for consistent styling
 import Layout from './Layout.astro'
 
-// Section Components
+// Blog hero section with title and metadata
 import BlogPostHero from '../components/blocks/blog/BlogPostHero.astro'
 
-// Content
-// - SEO
+// Build SEO metadata from post frontmatter
 const SEO = {
 	title: `${frontmatter.title} | Whynt`,
 	description: `${frontmatter.description}`

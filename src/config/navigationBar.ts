@@ -1,6 +1,5 @@
-// Navigation Bar
-// ------------
-// Description: The navigation bar data for the website.
+// Navigation bar configuration with logo,
+// menu items, and action buttons for header
 export interface Logo {
 	src: string
 	alt: string

@@ -1,6 +1,5 @@
-// Social Links
-// ------------
-// Description: The social links data for the website.
+// Social media links configuration
+// for footer and social proof sections
 
 export interface SocialLink {
 	name: string
