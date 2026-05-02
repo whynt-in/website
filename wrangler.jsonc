@@ -4,6 +4,7 @@
   "compatibility_flags": ["global_fetch_strictly_public"],
   "name": "corporate-website",
   "main": "src/worker.ts",
+  "routes": ["whynt.in/*", "www.whynt.in/*"],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
