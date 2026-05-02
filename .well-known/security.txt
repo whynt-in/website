@@ -1,0 +1,5 @@
+Contact: mailto:whynt.in@gmail.com
+Expires: 2027-04-30T18:30:00Z
+Encryption: https://whynt.in/.well-known/pgp-key.txt
+Canonical: https://whynt.in/.well-known/security.txt
+Preferred-Languages: en

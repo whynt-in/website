@@ -48,4 +48,14 @@
       "new_sqlite_classes": ["RateLimiter"],
     },
   ],
+  "build": {
+    "upload": {
+      "rules": [
+        {
+          "type": "Text",
+          "globs": ["**/*.txt"],
+        },
+      ],
+    },
+  },
 }
