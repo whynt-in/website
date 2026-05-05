@@ -34,13 +34,13 @@ export interface FooterData {
 
 export const footerNavigationData: FooterData = {
 	footerAbout: {
-		title: 'Whynt.',
+		title: 'Whynt',
 		aboutText:
 			'Made with ❤️ by the Whynt team. We are a small team of passionate developers who are dedicated to creating the best possible experience for our users.',
 		logo: {
 			src: '/logo.svg',
 			alt: 'Whynt Logo',
-			text: 'Whynt.'
+			text: 'Whynt'
 		}
 	},
 	footerColumns: [

@@ -34,7 +34,7 @@ export const navigationBarData: NavData = {
 	logo: {
 		src: '/logo.svg',
 		alt: 'Whynt Logo',
-		text: 'Whynt.'
+		text: 'Whynt'
 	},
 	navItems: [
 		{ name: 'Home', link: '/' },
