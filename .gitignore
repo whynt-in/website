@@ -4,6 +4,7 @@ dist/
 # generated types
 .astro/
 .vercel/
+
 # dependencies
 node_modules/
 
@@ -22,9 +23,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
-
-# macOS-specific files
-.DS_Store
 
 # cloudflare pages
 .wrangler/
