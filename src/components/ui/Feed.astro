@@ -1,4 +1,6 @@
 ---
+import { Picture } from 'astro:assets'
+
 // Feed
 // ------------
 // Description: the feed component is a ui element that displays a stream of content (static or dynamic), such as comments, activity updates, posts, in a chronological order.
@@ -31,7 +33,7 @@ const { data, classes } = Astro.props
 					</h4>
 					{item.image && (
 						<div class="feed__item-image">
-							<img src={item.image} alt={item.title} width="1000" height="500" />
+							<Picture quality={75} src={item.image} alt={item.title} width="1000" height="500" />
 						</div>
 					)}
 					<div class="feed__item-text basic-text" set:html={item.text} />
