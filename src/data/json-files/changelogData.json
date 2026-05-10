@@ -3,13 +3,13 @@
 		"title": "v1.0.6: Security Hardening and Access Controls",
 		"date": "2024-04-15",
 		"text": "<p>Security upgrades are now part of our default delivery baseline for all active client systems.</p><ul><li>MFA enforcement for privileged accounts</li><li>Improved audit logging across key workflows</li><li>Backup verification checklist added to maintenance cycles</li></ul>",
-		"image": "/feeds/feed-01.png"
+		"image": "/feeds/feed-01.webp"
 	},
 	{
 		"title": "v1.0.5: Website Performance and UX Refresh",
 		"date": "2024-04-08",
 		"text": "<p>We rolled out front-end improvements focused on faster load times and cleaner user journeys for business websites.</p><ul><li>Optimized navigation hierarchy for service pages</li><li>Improved accessibility states for forms and buttons</li><li>Reduced layout shift and page load bottlenecks</li></ul>",
-		"image": "/feeds/feed-02.png"
+		"image": "/feeds/feed-02.webp"
 	},
 	{
 		"title": "v1.0.4: Internal Workflow Automation Pack",
@@ -20,7 +20,7 @@
 		"title": "v1.0.3: Stability and Maintenance Update",
 		"date": "2024-03-03",
 		"text": "<p>Maintenance-focused release to keep deployments stable as client systems scale.</p><ul><li>Dependency patch cycle completed</li><li>Error monitoring cleanup and alert tuning</li><li>Bug fixes for edge-case form submissions</li></ul>",
-		"image": "/feeds/feed-03.png"
+		"image": "/feeds/feed-03.webp"
 	},
 	{
 		"title": "v1.0.2: Integration Layer Expansion",
@@ -31,6 +31,6 @@
 		"title": "v1.0.1: Foundation Release",
 		"date": "2024-01-13",
 		"text": "<p>Initial release of the Whynt delivery baseline for SMB software projects.</p><ul><li>Core project scaffolding and deployment pipeline</li><li>Base analytics and conversion tracking setup</li><li>Documentation template for handover and support</li></ul>",
-		"image": "/feeds/feed-04.png"
+		"image": "/feeds/feed-04.webp"
 	}
 ]

@@ -17,6 +17,7 @@
 import Card from './partials/Card.astro'
 import CardBody from './partials/CardBody.astro'
 import Badge from '../Badge.astro'
+import { Picture } from 'astro:assets'
 
 // Props
 type Props = {
@@ -38,7 +39,7 @@ const {
 ---
 
 <Card classes={classes}>
-	{image && <img src={image} alt={title} width={600} height={400} />}
+	{image && <Picture quality={60} src={image} alt={title} width={600} height={400} />}
 	<CardBody>
 		<h3 class="post-title">
 			<a href={link}>{title}</a>

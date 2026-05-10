@@ -15,15 +15,16 @@ import AvatarGroup from '../../ui/AvatarGroup.astro'
 
 // Content
 // - Hero Image
-import heroImage from '../../../assets/hero-01.png'
+import heroImage from '../../../assets/hero-01.webp'
+import { Picture } from 'astro:assets'
 // - Tools
-import tool1 from '../../../assets/tools/what-is-website.webp'
-import tool2 from '../../../assets/tools/what-is-server.webp'
-import tool3 from '../../../assets/tools/what-is-software.webp'
+import tool1 from '../../../assets/tools/astro-icon.webp'
+import tool2 from '../../../assets/tools/gitlab-logomark.webp'
+import tool3 from '../../../assets/tools/cloudflare-press-kit.webp'
 const tools = [
-	{ image: { src: tool1.src, alt: 'website development' }, link: '/' },
-	{ image: { src: tool2.src, alt: 'server management' }, link: '/' },
-	{ image: { src: tool3.src, alt: 'software development' }, link: '/' }
+	{ image: { src: tool1.src, alt: 'Astro' }, link: 'https://astro.build/' },
+	{ image: { src: tool2.src, alt: 'GitLab' }, link: 'https://gitlab.com/' },
+	{ image: { src: tool3.src, alt: 'Cloudflare' }, link: 'https://cloudflare.com/' }
 ]
 ---
 
@@ -43,10 +44,14 @@ const tools = [
 		<Col span="2" />
 		<Col span="2" />
 		<Col span="8">
-			<img
-				src={heroImage.src}
+			<Picture
+				priority
+				quality={100}
+				src={heroImage}
 				alt="Whynt Example software image."
 				class="translate-y-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
+				width={heroImage.width}
+				height={heroImage.height}
 			/></Col
 		>
 		<Col span="2" />

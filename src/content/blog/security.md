@@ -3,13 +3,13 @@ title: 'Security Basics Every Growing Business Should Have'
 pubDate: 2024-02-10T05:00:00Z
 description: 'Security does not need to be complicated. These are the core protections Whynt recommends for SMB software systems from day one.'
 author: 'Gautham Vinayachandran'
-image: '/blog/post-03-cover.png'
+image: '/blog/post-03-cover.webp'
 tags: ['security', 'engineering']
 ---
 
 Most breaches in smaller businesses do not happen because of advanced attacks. They happen because basic controls were skipped.
 
-![Security-first systems by Whynt.](/blog/post-03.png)
+![Security-first systems by Whynt.](/blog/post-03.webp)
 
 At Whynt, we design practical systems that teams can actually maintain. Here are the minimum controls we treat as non-negotiable for client projects.
 

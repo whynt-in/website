@@ -3,13 +3,13 @@ title: 'Should Your Business Build a Mobile App?'
 pubDate: 2024-01-27T05:00:00Z
 description: 'Not every company needs a mobile app immediately. Here is a practical framework we use at Whynt to decide the right time and scope.'
 author: 'Gautham Vinayachandran'
-image: '/blog/post-02-cover.png'
+image: '/blog/post-02-cover.webp'
 tags: ['development', 'mobile']
 ---
 
 Mobile apps are powerful, but for many small and mid-sized businesses, a rushed app can create more cost than value. At Whynt, we usually start with one question: will a mobile app solve a real daily pain for your users?
 
-![Mobile product decisions at Whynt.](/blog/post-02.png)
+![Mobile product decisions at Whynt.](/blog/post-02.webp)
 
 ### Start with the business case
 
