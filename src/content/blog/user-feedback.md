@@ -3,13 +3,13 @@ title: 'What Client Feedback Changed in Our Delivery Process'
 pubDate: 2024-03-30T05:00:00Z
 description: 'At Whynt, feedback does not sit in a document. It directly shapes scope, timelines, and how we deliver software for SMB teams.'
 author: 'Ashtav Prabhakaran'
-image: '/blog/post-04-cover.png'
+image: '/blog/post-04-cover.webp'
 tags: ['operations', 'delivery']
 ---
 
 The strongest improvement loop in software is simple: listen, prioritize, ship, and review.
 
-![Client feedback loop at Whynt.](/blog/post-01.png)
+![Client feedback loop at Whynt.](/blog/post-04.webp)
 
 Over the last few projects, client feedback pushed us to improve not just what we build, but how we deliver.
 

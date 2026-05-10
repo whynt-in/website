@@ -3,11 +3,11 @@ title: 'Building Internal Tools That Teams Actually Use'
 pubDate: 2024-03-03T05:00:00Z
 description: 'Collaboration improves when tools match real workflows. This is how Whynt approaches internal software for growing teams.'
 author: 'Gautham Vinayachandran'
-image: '/blog/post-05-cover.png'
+image: '/blog/post-05-cover.webp'
 tags: ['development', 'teamwork']
 ---
 
-![Internal tools for better team flow.](/blog/post-05.png)
+![Internal tools for better team flow.](/blog/post-05.webp)
 
 Most teams do not struggle because they lack effort. They struggle because information is scattered across chats, spreadsheets, and disconnected apps.
 

@@ -3,11 +3,11 @@ title: 'How Small Businesses Grow with the Right Software Partner'
 pubDate: 2024-04-15T05:00:00Z
 description: 'A few real-world patterns we see when SMBs invest in practical software and long-term support with Whynt.'
 author: 'Ashtav Prabhakaran'
-image: '/blog/post-06-cover.png'
+image: '/blog/post-06-cover.webp'
 tags: ['growth', 'case-studies']
 ---
 
-![Business growth enabled by practical software.](/blog/post-06.png)
+![Business growth enabled by practical software.](/blog/post-06.webp)
 
 Across projects, we repeatedly see one thing: businesses move faster when technology stops being a bottleneck.
 
