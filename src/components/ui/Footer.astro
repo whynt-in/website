@@ -8,6 +8,10 @@
 // - UI
 import { Icon } from 'astro-icon/components'
 
+// - Protected by Cloudflare
+import { Picture } from 'astro:assets'
+import cloudflareBadge from '../../assets/footer/BDES-5287_ProtectedByCloudflareBadge_web_badges_5.png'
+
 // Data
 import { socialLinks } from '../../config/socialLinks'
 import { footerNavigationData } from '../../config/footerNavigation'
@@ -28,6 +32,16 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 					<p>
 						{footerAbout.aboutText}
 					</p>
+					<a href="https://cloudflare.com/">
+						<Picture
+							src={cloudflareBadge}
+							alt="This website is protected by Cloudflare"
+							height={132}
+							width={381}
+							quality={75}
+							class="h-auto w-[180px]"
+						/>
+					</a>
 				</div>
 				{
 					footerColumns.map((column) => (
