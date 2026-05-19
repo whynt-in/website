@@ -17,12 +17,13 @@ const featuresProductivity = featuresData.filter((feature) => feature.category =
 const featuresSecurity = featuresData.filter((feature) => feature.category === 'Security')
 const featuresIntegrations = featuresData.filter((feature) => feature.category === 'Integrations')
 const featuresSupport = featuresData.filter((feature) => feature.category === 'Support')
+const featuresMarketing = featuresData.filter((feature) => feature.category === 'Marketing')
 
 // Features page SEO metadata
 const SEO = {
 	title: 'Whynt | Services and Capabilities',
 	description:
-		'Explore Whynt’s core capabilities across custom software development, website development, maintenance, integrations, and support.'
+		'Explore Whynt’s core capabilities across custom software development, website development, digital marketing, maintenance, integrations, and support.'
 }
 // Features hero section title and description
 const header = {
@@ -63,6 +64,12 @@ const header = {
 		title="Ongoing Support"
 		text="Continuous maintenance and improvements to keep your systems running reliably."
 		data={featuresSupport}
+	/>
+	<Feature
+		title="Digital Marketing & Growth"
+		text="Drive traffic and conversions with SEO, content, and paid acquisition tailored for SMBs."
+		data={featuresMarketing}
+		classes="bg-neutral-50 dark:bg-neutral-900"
 	/>
 	<CTA />
 </Layout>
