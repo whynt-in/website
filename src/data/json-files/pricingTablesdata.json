@@ -1,23 +1,24 @@
 [
 	{
 		"header": {
-			"title": "Starter",
-			"subtitle": "For small businesses getting started with custom tools",
+			"title": "Essential Care",
+			"subtitle": "For small businesses that need a reliable, maintained online presence",
 			"currency": "₹",
-			"price": "4499",
+			"price": "2999",
 			"priceLabel": "month",
-			"priceMontly": "4999",
+			"priceMontly": "3499",
 			"priceLabelMontly": "month",
-			"badge": "Save 10%",
+			"badge": "Save 14%",
 			"buttonName": "Get started",
 			"buttonLink": "/contact"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Up to 10 hours of development or support" },
-				{ "listItem": "Basic internal tools or website improvements" },
-				{ "listItem": "Bug fixes and small feature updates" },
-				{ "listItem": "Email support with standard response time" }
+				{ "listItem": "Uptime monitoring & security updates" },
+				{ "listItem": "Monthly backups & SSL management" },
+				{ "listItem": "Up to 2 content updates per month" },
+				{ "listItem": "Monthly performance report" },
+				{ "listItem": "Email support within 48 hours" }
 			]
 		},
 		"footer": {
@@ -28,23 +29,24 @@
 	},
 	{
 		"header": {
-			"title": "Professional",
-			"subtitle": "For growing teams needing continuous development",
+			"title": "Growth",
+			"subtitle": "For growing businesses that need ongoing improvements alongside maintenance",
 			"currency": "₹",
-			"price": "13499",
+			"price": "7999",
 			"priceLabel": "month",
-			"priceMontly": "14999",
+			"priceMontly": "8999",
 			"priceLabelMontly": "month",
-			"badge": "Save 10%",
+			"badge": "Save 11%",
 			"buttonName": "Get started",
 			"buttonLink": "/contact"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Up to 40 hours of development per month" },
-				{ "listItem": "Custom software and workflow automation" },
-				{ "listItem": "API integrations and system improvements" },
-				{ "listItem": "Priority support and faster turnaround" }
+				{ "listItem": "Everything in Essential Care" },
+				{ "listItem": "Up to 8 hours of development & improvements" },
+				{ "listItem": "SEO health checks & speed optimisation" },
+				{ "listItem": "Feature updates and third-party integrations" },
+				{ "listItem": "Priority support within 24 hours" }
 			]
 		},
 		"footer": {
@@ -55,23 +57,24 @@
 	},
 	{
 		"header": {
-			"title": "Enterprise",
-			"subtitle": "For businesses building or scaling core systems",
-			"currency": "",
-			"price": "Custom",
-			"priceLabel": "",
-			"priceMontly": "Custom",
-			"priceLabelMontly": "",
-			"badge": "Custom discount",
+			"title": "Professional",
+			"subtitle": "For businesses actively building and scaling their digital systems",
+			"currency": "₹",
+			"price": "14999",
+			"priceLabel": "month",
+			"priceMontly": "16999",
+			"priceLabelMontly": "month",
+			"badge": "Save 12%",
 			"buttonName": "Get started",
 			"buttonLink": "/contact"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Dedicated development and architecture support" },
-				{ "listItem": "End-to-end system design and builds" },
-				{ "listItem": "Advanced integrations and scaling solutions" },
-				{ "listItem": "Fast response and ongoing collaboration" }
+				{ "listItem": "Everything in Growth" },
+				{ "listItem": "Up to 20 hours of development per month" },
+				{ "listItem": "Custom feature builds and workflow automation" },
+				{ "listItem": "Dedicated point of contact" },
+				{ "listItem": "Same-day priority support" }
 			]
 		},
 		"footer": {

@@ -88,5 +88,17 @@
 		"icon": "key",
 		"description": "Built to connect with any modern software stack.",
 		"category": "Integrations"
+	},
+	{
+		"title": "Website Development",
+		"icon": "key",
+		"description": "Modern, responsive websites built for performance, accessibility, and conversions.",
+		"category": "Productivity"
+	},
+	{
+		"title": "Digital Marketing & SEO",
+		"icon": "key",
+		"description": "SEO, content, and paid acquisition strategies to grow traffic and measurable results.",
+		"category": "Marketing"
 	}
 ]
