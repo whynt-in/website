@@ -105,7 +105,7 @@ ${posts
 - This plaintext document is structured for LLM indexing and retrieval. It contains both human-readable sections and a small machine-readable JSON block for quick parsing.
 `
 
-export const GET: APIRoute = async () => {
+export const GET: APIRoute = () => {
 	return new Response(llmsFullTxt, {
 		headers: {
 			'Content-Type': 'text/plain; charset=utf-8'

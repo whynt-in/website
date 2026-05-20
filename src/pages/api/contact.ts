@@ -60,12 +60,12 @@ export const POST: APIRoute = async ({ request }) => {
 
 		// Verify CAPTCHA token with Cloudflare Turnstile
 		const validationResponse = await validateTurnstile(turnstileToken)
-		// @ts-ignore
+		// @ts-ignore: unknown type from validateTurnstile
 		if (!validationResponse.success) {
 			return new Response(
 				JSON.stringify({
 					success: false,
-					// @ts-ignore
+					// @ts-ignore: unknown type from validateTurnstile
 					error: validationResponse.error || 'Invalid CAPTCHA 🤖'
 				}),
 				{ status: 400 }

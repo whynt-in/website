@@ -21,7 +21,7 @@ function getTheme(): 'light' | 'dark' {
 // Render Turnstile widget with theme support
 function renderTurnstile() {
 	const el = document.getElementById('turnstile-container')
-	// @ts-ignore
+	// @ts-ignore -- turnstile is injected globally by external Cloudflare script
 	if (!el || !window.turnstile) return
 
 	// Re-render if theme changed or widget doesn't exist
@@ -30,7 +30,7 @@ function renderTurnstile() {
 
 	// Clean up old widget before rendering new one
 	if (widgetId) {
-		// @ts-ignore
+		// @ts-ignore -- turnstile is injected globally by external Cloudflare script
 		window.turnstile.remove(widgetId)
 		widgetId = null
 	}
@@ -38,7 +38,7 @@ function renderTurnstile() {
 	currentTheme = nextTheme
 
 	// Render Turnstile with callbacks for validation state
-	// @ts-ignore
+	// @ts-ignore -- turnstile is injected globally by external Cloudflare script
 	widgetId = window.turnstile.render(el, {
 		sitekey: '0x4AAAAAADDwM2QRg3d3Kb7u',
 		theme: currentTheme,
@@ -65,7 +65,7 @@ export function initiateTurnstile() {
 	// Poll for Turnstile script availability
 	const run = () => {
 		const interval = setInterval(() => {
-			// @ts-ignore
+			// @ts-ignore -- turnstile is injected globally by external Cloudflare script
 			if (window.turnstile) {
 				renderTurnstile()
 				clearInterval(interval)
@@ -96,9 +96,9 @@ export function initiateTurnstile() {
 
 // Cleanup Turnstile widget on page unload
 export function destroyTurnstile() {
-	// @ts-ignore
+	// @ts-ignore -- turnstile is injected globally by external Cloudflare script
 	if (widgetId && window.turnstile) {
-		// @ts-ignore
+		// @ts-ignore -- turnstile is injected globally by external Cloudflare script
 		window.turnstile.remove(widgetId)
 		widgetId = null
 	}

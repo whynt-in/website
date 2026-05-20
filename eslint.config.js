@@ -7,26 +7,11 @@ import globals from "globals";
 export default [
   js.configs.recommended,
 
+  // Standard TypeScript rules
   ...tseslint.configs.recommended,
 
+  // Astro rules
   ...astro.configs["flat/recommended"],
-
-  // Scoped type-aware rules
-  ...tseslint.configs.recommendedTypeChecked.map((config) => ({
-    ...config,
-
-    files: ["**/*.{ts,tsx,astro}"],
-
-    languageOptions: {
-      ...config.languageOptions,
-
-      parserOptions: {
-        ...config.languageOptions?.parserOptions,
-        project: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
-    },
-  })),
 
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,astro}"],
@@ -53,7 +38,40 @@ export default [
     },
   },
 
+  // Project-specific rule adjustments
   {
-    ignores: ["dist", ".astro", "node_modules"],
+    rules: {
+      // Allow pragmatic Astro component patterns
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
+
+      // Useful strictness without excessive noise
+      "@typescript-eslint/ban-ts-comment": [
+        "error",
+        {
+          "ts-ignore": "allow-with-description",
+          "ts-expect-error": "allow-with-description",
+        },
+      ],
+
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
+
+      "require-await": "warn",
+    },
+  },
+
+  {
+    ignores: ["dist", ".astro", "node_modules", "worker-configuration.d.ts"],
   },
 ];

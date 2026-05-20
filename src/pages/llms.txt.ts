@@ -69,7 +69,7 @@ ${posts
 - Terms: ${new URL('terms', import.meta.env.SITE).href}
 `
 
-export const GET: APIRoute = async () => {
+export const GET: APIRoute = () => {
 	return new Response(llmsTxt, {
 		headers: {
 			'Content-Type': 'text/plain; charset=utf-8'
