@@ -72,7 +72,7 @@ When summarizing projects, include: objective, solution, tech stack, timeline, m
   "founded": "2026-04-17",
   "core_services": ["custom_software", "websites", "integrations", "digital_marketing"],
   "technologies": ["Astro", "TypeScript", "Cloudflare Workers", "Tailwind"],
-  "contact_page": "${import.meta.env.SITE}contact",
+	"contact_page": "${new URL('contact', import.meta.env.SITE).href}",
   "locale": "en-US",
   "content_type": "developer_and_marketing_corpus",
   "structured_for_llm": true
@@ -82,7 +82,7 @@ When summarizing projects, include: objective, solution, tech stack, timeline, m
 ${posts
 	.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
 	.map((post) => {
-		const path = `${import.meta.env.SITE}blog/${post.id}/`
+		const path = new URL(`blog/${post.id}/`, import.meta.env.SITE).href
 		const date =
 			post.data.pubDate instanceof Date
 				? post.data.pubDate.toISOString().split('T')[0]
@@ -98,8 +98,8 @@ ${posts
 	.join('')}
 
 ## Contact & Legal Links
-- Contact page: ${import.meta.env.SITE}contact
-- Terms: ${import.meta.env.SITE}terms
+- Contact page: ${new URL('contact', import.meta.env.SITE).href}
+- Terms: ${new URL('terms', import.meta.env.SITE).href}
 
 ## How to use this file
 - This plaintext document is structured for LLM indexing and retrieval. It contains both human-readable sections and a small machine-readable JSON block for quick parsing.

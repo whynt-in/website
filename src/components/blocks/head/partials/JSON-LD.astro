@@ -119,7 +119,12 @@ if (type === 'FAQPage') {
 		}))
 	}
 }
+
+const safeSchema = JSON.stringify(schema)
+	.replace(/</g, '\\u003c')
+	.replace(/\u2028/g, '\\u2028')
+	.replace(/\u2029/g, '\\u2029')
 ---
 
 <!-- JSON-LD -->
-<script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+<script type="application/ld+json" set:html={safeSchema} is:inline />

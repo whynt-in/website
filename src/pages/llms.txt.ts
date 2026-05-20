@@ -40,8 +40,8 @@ Last updated: ${new Date().toISOString()}
 - Measurable outcomes: traffic, leads, and conversion improvements
 - Transparent pricing and pragmatic engineering choices
 
-## Contact
-- Contact page: ${import.meta.env.SITE}contact
+-## Contact
+- Contact page: ${new URL('contact', import.meta.env.SITE).href}
 - Prefer email or the contact form for project inquiries and rates.
 
 ## Blog Posts
@@ -57,16 +57,16 @@ ${posts
 			Array.isArray(post.data.tags) && post.data.tags.length
 				? ` Tags: ${post.data.tags.join(', ')}`
 				: ''
-		return `- [${post.data.title}](${import.meta.env.SITE}blog/${post.id}/) — ${date}${desc}${tags}\n`
+		return `- [${post.data.title}](${new URL(`blog/${post.id}/`, import.meta.env.SITE).href}) — ${date}${desc}${tags}\n`
 	})
 	.join('')}
 
 ## Full content
-- [All content in one file](${import.meta.env.SITE}llms-full.txt)
+- [All content in one file](${new URL('llms-full.txt', import.meta.env.SITE).href})
 
 ## Contact & Legal Links
-- Contact page: ${import.meta.env.SITE}contact
-- Terms: ${import.meta.env.SITE}terms
+- Contact page: ${new URL('contact', import.meta.env.SITE).href}
+- Terms: ${new URL('terms', import.meta.env.SITE).href}
 `
 
 export const GET: APIRoute = async () => {
