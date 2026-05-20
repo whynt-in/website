@@ -8,15 +8,26 @@ import Layout from './Layout.astro'
 
 // Blog hero section with title and metadata
 import BlogPostHero from '../components/blocks/blog/BlogPostHero.astro'
+import JSONLD from '../components/blocks/head/partials/JSON-LD.astro'
 
 // Build SEO metadata from post frontmatter
 const SEO = {
 	title: `${frontmatter.title} | Whynt`,
-	description: `${frontmatter.description}`
+	description: `${frontmatter.description}`,
+	noindex: false
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
+	<JSONLD
+		type="BlogPosting"
+		title={frontmatter.title}
+		description={frontmatter.description}
+		publishDate={frontmatter.pubDate.toISOString()}
+		image={`https://www.whynt.in${frontmatter.image}`}
+		canonicalURL={`https://www.whynt.in${Astro.url.pathname}`}
+		author={frontmatter.author}
+	/>
 	<BlogPostHero
 		tags={frontmatter.tags}
 		title={frontmatter.title}

@@ -14,7 +14,8 @@ import SocialProof from '../components/blocks/socialproof/Basic.astro'
 const SEO = {
 	title: 'Whynt | Contact Us',
 	description:
-		'Contact Whynt to discuss a custom software project, website build, digital marketing campaign, maintenance support, or integration work for your business.'
+		'Contact Whynt to discuss a custom software project, website build, digital marketing campaign, maintenance support, or integration work for your business.',
+	noindex: false
 }
 // Hero section title and description
 const header = {
@@ -23,7 +24,7 @@ const header = {
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<FormHero
 		title={header.title}
 		text={header.text}

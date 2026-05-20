@@ -16,7 +16,8 @@ import feedData from '../data/json-files/changelogData.json'
 const SEO = {
 	title: 'Whynt | Updates and Improvements',
 	description:
-		'Explore the latest Whynt updates, refinements, and improvements across software builds, websites, digital marketing, maintenance, and integrations.'
+		'Explore the latest Whynt updates, refinements, and improvements across software builds, websites, digital marketing, maintenance, and integrations.',
+	noindex: false
 }
 // Changelog hero section title and description
 const header = {
@@ -25,7 +26,7 @@ const header = {
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<Hero title={header.title} text={header.text} />
 	<SimpleFeed data={feedData} />
 	<CTA />

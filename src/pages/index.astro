@@ -18,11 +18,12 @@ import testimonialBackground from '../assets/testimonial-bg-01.webp'
 const SEO = {
 	title: 'Whynt | Software, Websites & Digital Marketing That Grow With Your Business',
 	description:
-		'Whynt builds practical software, modern websites, and results-driven digital marketing for small and mid-sized businesses that need reliable tech execution and measurable growth.'
+		'Whynt builds practical software, modern websites, and results-driven digital marketing for small and mid-sized businesses that need reliable tech execution and measurable growth.',
+	noindex: false
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<Hero />
 	<Features />
 	<Testimonial bg={testimonialBackground} bgPosition="right" />

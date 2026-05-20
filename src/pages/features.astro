@@ -23,7 +23,8 @@ const featuresMarketing = featuresData.filter((feature) => feature.category === 
 const SEO = {
 	title: 'Whynt | Services and Capabilities',
 	description:
-		'Explore Whynt’s core capabilities across custom software development, website development, digital marketing, maintenance, integrations, and support.'
+		'Explore Whynt’s core capabilities across custom software development, website development, digital marketing, maintenance, integrations, and support.',
+	noindex: false
 }
 // Features hero section title and description
 const header = {
@@ -32,7 +33,7 @@ const header = {
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<Hero title={header.title} text={header.text} />
 	<Feature
 		title="Actionable Insights"

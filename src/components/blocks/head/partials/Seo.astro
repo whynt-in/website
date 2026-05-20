@@ -36,5 +36,11 @@ const { title, description, ogImage, canonical, noindex } = Astro.props
 	<meta property="twitter:image" content={ogImage} />
 	<link rel="canonical" href={Astro.url} />
 	{canonical && <link rel="canonical" href={Astro.url} item-prop="url" />}
-	{noindex && <meta name="robots" content="noindex,nofollow" />}
+	{
+		noindex ? (
+			<meta name="robots" content="noindex,nofollow,noai,nollm" />
+		) : (
+			<meta name="robots" content="index, follow" />
+		)
+	}
 </Fragment>

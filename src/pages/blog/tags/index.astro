@@ -11,9 +11,14 @@ import BlogPosts from '../../../components/blocks/blog/BlogPosts.astro'
 // Fetch all blog posts for tag listing
 import { getCollection } from 'astro:content'
 const allPosts = await getCollection('blog')
+
+// Prevent robots indexing
+const SEO = {
+	noindex: true
+}
 ---
 
-<Layout>
+<Layout noindex={SEO.noindex}>
 	<Hero title="Tags" />
 	<BlogPosts data={allPosts} />
 </Layout>
