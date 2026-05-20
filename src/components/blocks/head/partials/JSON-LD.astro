@@ -1,0 +1,125 @@
+---
+// JSON LD Component
+// -----------------
+// Description: A component to add JSON-LD structured data to the page.
+// Properties:
+// - type: The type of structured data (Organization, BlogPosting, FAQPage)
+// - title: The title of the content (for BlogPosting)
+// - description: The description of the content (for Organization and BlogPosting)
+// - author: The author of the content (for BlogPosting)
+// - publishDate: The publish date of the content (for BlogPosting)
+// - image: The image URL of the content (for BlogPosting)
+// - canonicalURL: The canonical URL of the content (for BlogPosting)
+// - faq: An array of FAQ items (for FAQPage)
+
+type FAQ = {
+	question: string
+	reply: string
+}
+
+type Props = {
+	type: 'Organization' | 'BlogPosting' | 'FAQPage'
+
+	title?: string
+	description?: string
+	author?: string
+	publishDate?: string
+
+	image?: string
+	canonicalURL?: string
+
+	faq?: FAQ[]
+}
+
+const { type, title, description, author, publishDate, image, canonicalURL, faq = [] } = Astro.props
+
+const siteURL = 'https://www.whynt.in'
+
+const defaultTitle = 'Whynt | Software, Websites & Digital Marketing That Grow With Your Business'
+
+const defaultDescription =
+	'Whynt builds practical software, modern websites, and results-driven digital marketing for small and mid-sized businesses that need reliable tech execution and measurable growth.'
+
+const defaultImage = `${siteURL}/og.jpg`
+
+const organization = {
+	'@type': 'Organization',
+	name: 'Whynt',
+	url: siteURL,
+
+	logo: {
+		'@type': 'ImageObject',
+		url: `${siteURL}/logo.svg`
+	},
+
+	sameAs: ['https://www.linkedin.com/company/whynt', 'https://www.instagram.com/whynt.in/']
+}
+
+const base = {
+	'@context': 'https://schema.org'
+}
+
+let schema = {}
+
+if (type === 'Organization') {
+	schema = {
+		...base,
+
+		...organization,
+
+		description: description || defaultDescription
+	}
+}
+
+if (type === 'BlogPosting') {
+	schema = {
+		...base,
+
+		'@type': 'BlogPosting',
+
+		headline: title || defaultTitle,
+
+		description: description || defaultDescription,
+
+		image: image || defaultImage,
+
+		author: {
+			'@type': 'Person',
+			name: author || 'Gautham Vinayachandran'
+		},
+
+		publisher: organization,
+
+		datePublished: publishDate || new Date().toISOString(),
+
+		dateModified: publishDate || new Date().toISOString(),
+
+		mainEntityOfPage: {
+			'@type': 'WebPage',
+			'@id': canonicalURL || Astro.url.href
+		}
+	}
+}
+
+if (type === 'FAQPage') {
+	schema = {
+		...base,
+
+		'@type': 'FAQPage',
+
+		mainEntity: faq.map((item) => ({
+			'@type': 'Question',
+
+			name: item.question,
+
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.reply
+			}
+		}))
+	}
+}
+---
+
+<!-- JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />

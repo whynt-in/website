@@ -6,6 +6,7 @@ import GoogleTagManagerHead from '../../scripts/googleTagManagerHead.astro'
 import GoogleSearchConsole from '../../scripts/googleSearchConsole.astro'
 // Partials
 import Seo from './partials/Seo.astro'
+import JSONLD from './partials/JSON-LD.astro'
 // Data
 import { configData } from '../../../config/config'
 
@@ -50,5 +51,6 @@ const {
 	<link rel="preconnect" href="https://challenges.cloudflare.com" />
 	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline
 	></script>
+	<JSONLD type="Organization" />
 	<ClientRouter fallback="swap" />
 </head>
