@@ -12,11 +12,12 @@ import BlogPostHero from '../components/blocks/blog/BlogPostHero.astro'
 // Build SEO metadata from post frontmatter
 const SEO = {
 	title: `${frontmatter.title} | Whynt`,
-	description: `${frontmatter.description}`
+	description: `${frontmatter.description}`,
+	noindex: false
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<BlogPostHero
 		tags={frontmatter.tags}
 		title={frontmatter.title}

@@ -17,7 +17,8 @@ import CTA from '../components/blocks/CTA/BasicDark.astro'
 const SEO = {
 	title: 'Whynt | Pricing and Engagement',
 	description:
-		'Learn how Whynt scopes custom projects, support retainers, and ongoing improvements for software, websites, digital marketing, and integrations.'
+		'Learn how Whynt scopes custom projects, support retainers, and ongoing improvements for software, websites, digital marketing, and integrations.',
+	noindex: false
 }
 // Pricing hero section title and description
 const header = {
@@ -34,7 +35,7 @@ const testimonialData = {
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<Hero title={header.title} text={header.text} />
 	<Price />
 	<SocialProof />

@@ -16,11 +16,12 @@ import { Icon } from 'astro-icon/components'
 const SEO = {
 	title: 'Page Not Found | Whynt',
 	description:
-		'The page you are looking for does not exist or may have been moved. Explore our services or return to the homepage.'
+		'The page you are looking for does not exist or may have been moved. Explore our services or return to the homepage.',
+	noindex: true
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<Section>
 		<Row flex classes="text-center">
 			<Col span="2" />

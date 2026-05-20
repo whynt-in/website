@@ -12,7 +12,8 @@ import Hero from '../components/blocks/hero/PageHeader.astro'
 const SEO = {
 	title: 'Whynt | Terms of Service',
 	description:
-		'Whynt’s terms of service explain the rules that apply when you use our services, projects, and support offerings.'
+		'Whynt’s terms of service explain the rules that apply when you use our services, projects, and support offerings.',
+	noindex: true
 }
 // Terms page hero section title and description
 const header = {
@@ -21,7 +22,7 @@ const header = {
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<Hero title={header.title} text={header.text} />
 	<SidebarContent>
 		<div slot="sidebar">

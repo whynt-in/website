@@ -33,7 +33,8 @@ const { posts } = Astro.props
 const SEO = {
 	title: `Whynt | posts tagges as ` + tag,
 	description:
-		"Explore Whynt's latest news designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with Whynt today!"
+		"Explore Whynt's latest news designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with Whynt today!",
+	noindex: true
 }
 
 // Hero section with tag name
@@ -43,7 +44,7 @@ const header = {
 }
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<Hero title={header.title} text={header.text} />
 	<BlogPosts data={posts} />
 </Layout>

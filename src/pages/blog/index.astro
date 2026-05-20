@@ -15,7 +15,8 @@ import { getCollection } from 'astro:content'
 const SEO = {
 	title: 'Whynt | Blog',
 	description:
-		'Read Whynt’s latest updates, practical insights, and project notes on software, websites, digital marketing, maintenance, and integrations.'
+		'Read Whynt’s latest updates, practical insights, and project notes on software, websites, digital marketing, maintenance, and integrations.',
+	noindex: true
 }
 // Hero section title and description
 const header = {
@@ -27,7 +28,7 @@ const header = {
 const allPosts = await getCollection('blog')
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<Hero title={header.title} text={header.text} />
 	<BlogPosts data={allPosts} />
 </Layout>
