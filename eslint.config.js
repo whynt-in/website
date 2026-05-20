@@ -1,5 +1,6 @@
 import js from "@eslint/js";
-import tseslint from "typescript-eslint";
+import tsParser from "@typescript-eslint/parser";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
 import astro from "eslint-plugin-astro";
 import astroParser from "astro-eslint-parser";
 import globals from "globals";
@@ -7,49 +8,34 @@ import globals from "globals";
 export default [
   js.configs.recommended,
 
-  // Standard TypeScript rules
-  ...tseslint.configs.recommended,
-
-  // Astro rules
-  ...astro.configs["flat/recommended"],
-
+  // TypeScript
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,astro}"],
+    files: ["**/*.{ts,tsx,mts,cts}"],
 
     languageOptions: {
+      parser: tsParser,
+
+      parserOptions: {
+        project: "./tsconfig.json",
+        sourceType: "module",
+      },
+
       globals: {
         ...globals.browser,
         ...globals.node,
         ...globals.serviceworker,
       },
     },
-  },
 
-  {
-    files: ["**/*.astro"],
-
-    languageOptions: {
-      parser: astroParser,
-
-      parserOptions: {
-        parser: tseslint.parser,
-        extraFileExtensions: [".astro"],
-      },
+    plugins: {
+      "@typescript-eslint": tsPlugin,
     },
-  },
 
-  // Project-specific rule adjustments
-  {
     rules: {
-      // Allow pragmatic Astro component patterns
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-unsafe-assignment": "off",
-      "@typescript-eslint/no-unsafe-member-access": "off",
-      "@typescript-eslint/no-unsafe-return": "off",
-      "@typescript-eslint/no-unsafe-call": "off",
-      "@typescript-eslint/no-unsafe-argument": "off",
+      ...tsPlugin.configs.recommended.rules,
 
-      // Useful strictness without excessive noise
+      "@typescript-eslint/no-explicit-any": "off",
+
       "@typescript-eslint/ban-ts-comment": [
         "error",
         {
@@ -68,6 +54,44 @@ export default [
       ],
 
       "require-await": "warn",
+    },
+  },
+
+  // Astro
+  ...astro.configs["flat/recommended"],
+
+  {
+    files: ["**/*.astro"],
+
+    languageOptions: {
+      parser: astroParser,
+
+      parserOptions: {
+        parser: tsParser,
+        extraFileExtensions: [".astro"],
+      },
+
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+
+    plugins: {
+      "@typescript-eslint": tsPlugin,
+    },
+  },
+
+  // JS files
+  {
+    files: ["**/*.{js,mjs,cjs}"],
+
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.serviceworker,
+      },
     },
   },
 

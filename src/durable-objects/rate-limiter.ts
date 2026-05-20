@@ -1,5 +1,17 @@
 // Cloudflare Durable Object for rate limiting
 // Enforces per-IP request limits on contact form
+
+interface Transaction {
+	get(key: string): Promise<any>
+	put(key: string, value: any): Promise<void>
+}
+
+interface DurableObjectState {
+	storage: {
+		transaction(callback: (txn: Transaction) => Promise<void>): Promise<void>
+	}
+}
+
 export class RateLimiter {
 	state: DurableObjectState
 
@@ -8,20 +20,20 @@ export class RateLimiter {
 	}
 
 	async fetch(_request: Request): Promise<Response> {
-		const now = Date.now()
+		const now: number = Date.now()
 
 		// 24 hour window with max 5 submissions per IP
-		const WINDOW_MS = 24 * 60 * 60 * 1000
-		const LIMIT = 5
+		const WINDOW_MS: number = 24 * 60 * 60 * 1000
+		const LIMIT: number = 5
 
 		try {
 			// Atomic transaction for rate limit check
-			await this.state.storage.transaction(async (txn) => {
+			await this.state.storage.transaction(async (txn: Transaction): Promise<void> => {
 				// Get timestamps of past requests
-				let timestamps = (await txn.get<number[]>('timestamps')) || []
+				let timestamps: number[] = ((await txn.get('timestamps')) as number[] | undefined) || []
 
 				// Keep only requests within the time window
-				timestamps = timestamps.filter((ts) => now - ts < WINDOW_MS)
+				timestamps = timestamps.filter((ts: number): boolean => now - ts < WINDOW_MS)
 
 				// Reject if limit exceeded, else add current request
 				if (timestamps.length >= LIMIT) {

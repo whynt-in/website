@@ -3,10 +3,21 @@ import astroHandler from '@astrojs/cloudflare/entrypoints/server'
 import pgpKey from '../.well-known/pgp-key.txt'
 import securityTxt from '../.well-known/security.txt'
 
+interface Env {
+	// Use a permissive type for the Durable Object namespace to avoid
+	// build-time type issues related to the Cloudflare types/branding.
+	// The runtime behavior is unchanged.
+	RATE_LIMITER: any
+	DB?: any
+	ASSETS?: any
+	PUBLIC_GA_TRACKING_ID?: string
+	PUBLIC_GTM_ID?: string
+}
+
 // Cloudflare Worker entry point for Astro SSR
 // with rate limiting on contact form submissions
 export default {
-	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+	async fetch(request: Request, env: Env, ctx: any): Promise<Response> {
 		const url = new URL(request.url)
 
 		// Security and Vulnerability handling
@@ -40,7 +51,7 @@ export default {
 		}
 
 		// Delegate to Astro handler for main routing
-		return astroHandler.fetch(request, env, ctx)
+		return astroHandler.fetch(request, env as any, ctx)
 	}
 }
 
