@@ -1,52 +1,52 @@
 {
-  "$schema": "./node_modules/wrangler/config-schema.json",
-  "compatibility_date": "2026-04-19",
-  "compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
-  "name": "corporate-website",
-  "main": "src/worker.ts",
-  "routes": ["whynt.in/*", "www.whynt.in/*"],
-  "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS",
-  },
-  "observability": {
-    "enabled": false,
-    "head_sampling_rate": 1,
-    "logs": {
-      "enabled": true,
-      "head_sampling_rate": 1,
-      "persist": true,
-      "invocation_logs": true,
-    },
-    "traces": {
-      "enabled": true,
-      "persist": true,
-      "head_sampling_rate": 1,
-    },
-  },
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "whynt_corporate_prod",
-      "database_id": "f52e1692-28fb-44fe-a605-3a51d1f78656",
-    },
-  ],
-  "vars": {
-    "PUBLIC_GA_TRACKING_ID": "G-QNFF39546P",
-    "PUBLIC_GTM_ID": "GTM-N73TNZHL",
-  },
-  "durable_objects": {
-    "bindings": [
-      {
-        "name": "RATE_LIMITER",
-        "class_name": "RateLimiter",
-      },
-    ],
-  },
-  "migrations": [
-    {
-      "tag": "v1",
-      "new_sqlite_classes": ["RateLimiter"],
-    },
-  ],
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"compatibility_date": "2026-04-19",
+	"compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
+	"name": "corporate-website",
+	"main": "src/worker.ts",
+	"routes": ["whynt.in/*", "www.whynt.in/*"],
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS"
+	},
+	"observability": {
+		"enabled": false,
+		"head_sampling_rate": 1,
+		"logs": {
+			"enabled": true,
+			"head_sampling_rate": 1,
+			"persist": true,
+			"invocation_logs": true
+		},
+		"traces": {
+			"enabled": true,
+			"persist": true,
+			"head_sampling_rate": 1
+		}
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "whynt_corporate_prod",
+			"database_id": "f52e1692-28fb-44fe-a605-3a51d1f78656"
+		}
+	],
+	"vars": {
+		"PUBLIC_GA_TRACKING_ID": "G-QNFF39546P",
+		"PUBLIC_GTM_ID": "GTM-N73TNZHL"
+	},
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "RATE_LIMITER",
+				"class_name": "RateLimiter"
+			}
+		]
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_sqlite_classes": ["RateLimiter"]
+		}
+	]
 }

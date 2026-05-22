@@ -7,6 +7,6 @@ include:
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/Secret-Detection.gitlab-ci.yml
 variables:
-  SECRET_DETECTION_ENABLED: "true"
+  SECRET_DETECTION_ENABLED: 'true'
 secret_detection:
   stage: secret-detection

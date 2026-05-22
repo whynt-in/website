@@ -1,0 +1,8 @@
+# Ignore build artifacts and dependencies
+node_modules/
+dist/
+build/
+coverage/
+
+# Wrangler
+worker-configuration.d.ts
