@@ -68,6 +68,8 @@ export class RateLimiter {
 				)
 			}
 
+			console.error('Error in Rate Limiter: ', err)
+
 			return new Response(
 				JSON.stringify({
 					success: false,

@@ -21,8 +21,9 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# jetbrains and vscode
 .idea/
+.vscode/
 
 # cloudflare pages
 .wrangler/
