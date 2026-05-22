@@ -1,40 +1,36 @@
 {
-	"$schema": "./node_modules/wrangler/config-schema.json",
-	"compatibility_date": "2026-04-19",
-	"compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
+	"$schema": "node_modules/wrangler/config-schema.json",
+
 	"name": "corporate-website",
 	"main": "src/worker.ts",
-	"routes": ["whynt.in/*", "www.whynt.in/*"],
+	"compatibility_date": "2026-05-22",
+	"compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
+	"routes": [
+		"whynt.in/*",
+		"www.whynt.in/*",
+		"corporate-website.whynt.workers.dev/*",
+		"*-corporate-website.whynt.workers.dev/*"
+	],
+
+	// Enable observability
+	"observability": {
+		"enabled": true,
+		"logs": {
+			"enabled": true,
+			"invocation_logs": true
+		},
+		"traces": {
+			"enabled": true
+		}
+	},
+
+	// Static assets binding
 	"assets": {
 		"directory": "./dist",
 		"binding": "ASSETS"
 	},
-	"observability": {
-		"enabled": false,
-		"head_sampling_rate": 1,
-		"logs": {
-			"enabled": true,
-			"head_sampling_rate": 1,
-			"persist": true,
-			"invocation_logs": true
-		},
-		"traces": {
-			"enabled": true,
-			"persist": true,
-			"head_sampling_rate": 1
-		}
-	},
-	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "whynt_corporate_prod",
-			"database_id": "f52e1692-28fb-44fe-a605-3a51d1f78656"
-		}
-	],
-	"vars": {
-		"PUBLIC_GA_TRACKING_ID": "G-QNFF39546P",
-		"PUBLIC_GTM_ID": "GTM-N73TNZHL"
-	},
+
+	// Rate Limiter (D.O.) setup
 	"durable_objects": {
 		"bindings": [
 			{
@@ -48,5 +44,20 @@
 			"tag": "v1",
 			"new_sqlite_classes": ["RateLimiter"]
 		}
-	]
+	],
+
+	// Cloudflare D1 SQL Database
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "whynt_corporate_prod",
+			"database_id": "f52e1692-28fb-44fe-a605-3a51d1f78656"
+		}
+	],
+
+	// Environment variables
+	"vars": {
+		"PUBLIC_GA_TRACKING_ID": "G-QNFF39546P",
+		"PUBLIC_GTM_ID": "GTM-N73TNZHL"
+	}
 }

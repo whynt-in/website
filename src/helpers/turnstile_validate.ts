@@ -18,7 +18,7 @@ export async function validateTurnstile(token: string) {
 		const result = await response.json()
 		return result
 	} catch (error) {
-		console.error("Error processing CAPTCHA: ", error)
+		console.error('Error processing CAPTCHA: ', error)
 		return { success: false, error: 'CAPTCHA failed 🤖' }
 	}
 }
