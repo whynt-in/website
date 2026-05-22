@@ -29,21 +29,21 @@ Most of the site is content-driven rather than app-driven, so the page files usu
 
 ## Available Scripts
 
-- `npm run dev` - start the local Astro dev server
-- `npm run build` - run type checking and create a production build
-- `npm run preview` - preview the production build locally
-- `npm run astro` - access Astro CLI commands
+- `bun run dev` - start the local Astro dev server
+- `bun run build` - run type checking and create a production build
+- `bun run preview` - preview the production build locally
+- `bun run astro` - access Astro CLI commands
 
 ## Getting Started
 
 | Command           | What it does                                       |
 | ----------------- | -------------------------------------------------- |
-| `npm install`     | Installs all project dependencies.                 |
-| `npm run dev`     | Starts the local Astro development server.         |
-| `npm run build`   | Runs type checking and creates a production build. |
-| `npm run preview` | Serves the production build locally for review.    |
+| `bun install`     | Installs all project dependencies.                 |
+| `bun run dev`     | Starts the local Astro development server.         |
+| `bun run build`   | Runs type checking and creates a production build. |
+| `bun run preview` | Serves the production build locally for review.    |
 
-After running `npm run dev`, open the local URL shown in the terminal.
+After running `bun run dev`, open the local URL shown in the terminal.
 
 ## Content Notes
 
