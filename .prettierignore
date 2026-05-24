@@ -6,3 +6,6 @@ coverage/
 
 # Wrangler
 worker-configuration.d.ts
+
+# Google search console
+public/google8df335a31063bbb7.html
