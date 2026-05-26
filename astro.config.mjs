@@ -9,5 +9,6 @@ import cloudflare from '@astrojs/cloudflare'
 export default defineConfig({
 	site: 'https://whynt.in/',
 	integrations: [icon(), sitemap()],
-	adapter: cloudflare()
+	adapter: cloudflare(),
+	trailingSlash: 'always'
 })

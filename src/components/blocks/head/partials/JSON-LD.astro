@@ -33,14 +33,14 @@ type Props = {
 
 const { type, title, description, author, publishDate, image, canonicalURL, faq = [] } = Astro.props
 
-const siteURL = 'https://www.whynt.in'
+const siteURL = Astro.site?.href || 'https://whynt.in/'
 
 const defaultTitle = 'Whynt | Software, Websites & Digital Marketing That Grow With Your Business'
 
 const defaultDescription =
 	'Whynt builds practical software, modern websites, and results-driven digital marketing for small and mid-sized businesses that need reliable tech execution and measurable growth.'
 
-const defaultImage = `${siteURL}/og.jpg`
+const defaultImage = `${siteURL}og.jpg`
 
 const organization = {
 	'@type': 'Organization',
@@ -49,10 +49,10 @@ const organization = {
 
 	logo: {
 		'@type': 'ImageObject',
-		url: `${siteURL}/logo.svg`
+		url: `${siteURL}logo.svg`
 	},
 
-	sameAs: ['https://www.linkedin.com/company/whynt', 'https://www.instagram.com/whynt.in/']
+	sameAs: ['https://www.linkedin.com/company/whynt/', 'https://www.instagram.com/whynt.in/']
 }
 
 const base = {
