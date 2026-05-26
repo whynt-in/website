@@ -39,14 +39,15 @@ export const navigationBarData: NavData = {
 	navItems: [
 		{ name: 'Home', link: '/' },
 		{ name: 'Pricing', link: '/pricing' },
-		{ name: 'Features', link: '/features' },
+		{ name: 'Portfolio', link: '/portfolio' },
 		{
 			name: 'Resources',
 			link: '#',
 			submenu: [
 				{ name: 'Blog', link: '/blog' },
-				{ name: 'Changelog', link: '/changelog' },
+				{ name: 'Features', link: '/features' },
 				{ name: 'FAQ', link: '/faq' },
+				{ name: 'Changelog', link: '/changelog' },
 				{ name: 'Terms', link: '/terms' }
 			]
 		},

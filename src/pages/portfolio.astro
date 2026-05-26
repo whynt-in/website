@@ -1,0 +1,42 @@
+---
+// Page layout and content components
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/blocks/hero/PageHeader.astro'
+import FeatureCard from '../components/ui/cards/FeatureCard.astro'
+
+// Page SEO and hero section data (aligned with site-wide style)
+const SEO = {
+	title: 'Whynt | Portfolio',
+	description:
+		'Showcasing the work Whynt has delivered across custom software, websites, integrations, and digital growth projects for modern businesses.',
+	noindex: false
+}
+// Hero section title and description
+const header = {
+	title: 'Portfolio — Digital Work That <strong>Delivers</strong> Results',
+	text: 'Selected projects across software, websites, integrations, and growth engagements.'
+}
+
+// Portfolio data
+import { portfolioData } from '../data/typescript-files/portfolioData.ts'
+import Row from '../components/ui/Row.astro'
+import Col from '../components/ui/Col.astro'
+---
+
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
+	<Hero title={header.title} text={header.text} />
+	<Row classes="p-12 lg:p-24">
+		{
+			portfolioData.map((item) => (
+				<Col span="4">
+					<FeatureCard
+						title={item.title}
+						subtitle={item.subtitle}
+						image={item.image}
+						link={item.link}
+					/>
+				</Col>
+			))
+		}
+	</Row>
+</Layout>
