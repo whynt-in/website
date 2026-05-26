@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro'
 import { env } from 'cloudflare:workers'
 import { validateTurnstile } from '../../helpers/turnstile_validate'
+import { sendDiscordNotification } from '../../helpers/discord_webhook'
 
 // Disable pre-rendering for dynamic API endpoint
 export const prerender = false
@@ -84,18 +85,20 @@ export const POST: APIRoute = async ({ request }) => {
 			.run()
 
 		// Write to Discord webhook for notifications
-		await fetch(env.DISCORD_WEBHOOK_URL, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({
-				content: `
-				**New Contact Form Submission**\n
-				**Name:** ${firstName} ${lastName}
-				**Email:** ${email}
-				${phone ? `**Phone:** ${phone}\n` : ''}
-				**Message:** ${message}
-				`
-			})
+		sendDiscordNotification({
+			webhookUrl: env.DISCORD_WEBHOOK_URL,
+			title: 'New Contact Form Submission',
+			name: `${firstName} ${lastName}`,
+			email: email,
+			phone: phone,
+			message: message,
+			context: {
+				ip: request.headers.get('x-forwarded-for') ?? undefined,
+				userAgent: request.headers.get('user-agent') ?? undefined,
+				url: request.url,
+				method: request.method,
+				referer: request.headers.get('referer') ?? undefined
+			}
 		})
 
 		return new Response(
