@@ -83,6 +83,21 @@ export const POST: APIRoute = async ({ request }) => {
 			.bind(firstName, lastName, email, phone || null, message)
 			.run()
 
+		// Write to Discord webhook for notifications
+		await fetch(env.DISCORD_WEBHOOK_URL, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				content: `
+				**New Contact Form Submission**\n
+				**Name:** ${firstName} ${lastName}
+				**Email:** ${email}
+				${phone ? `**Phone:** ${phone}\n` : ''}
+				**Message:** ${message}
+				`
+			})
+		})
+
 		return new Response(
 			JSON.stringify({
 				success: true,
