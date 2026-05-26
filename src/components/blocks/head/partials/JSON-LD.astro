@@ -33,7 +33,7 @@ type Props = {
 
 const { type, title, description, author, publishDate, image, canonicalURL, faq = [] } = Astro.props
 
-const siteURL = 'https://www.whynt.in/'
+const siteURL = Astro.site?.href || 'https://whynt.in/'
 
 const defaultTitle = 'Whynt | Software, Websites & Digital Marketing That Grow With Your Business'
 
