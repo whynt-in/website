@@ -1,6 +1,7 @@
 ---
 // Page layout and content components
 import Layout from '../layouts/Layout.astro'
+import CTA from '../components/blocks/CTA/BasicLight.astro'
 import Hero from '../components/blocks/hero/PageHeader.astro'
 import FeatureCard from '../components/ui/cards/FeatureCard.astro'
 
@@ -13,7 +14,7 @@ const SEO = {
 }
 // Hero section title and description
 const header = {
-	title: 'Portfolio — Digital Work That <strong>Delivers</strong> Results',
+	title: 'Portfolio — Digital Work That <strong>Delivers</strong> Results.',
 	text: 'Selected projects across software, websites, integrations, and growth engagements.'
 }
 
@@ -39,4 +40,5 @@ import Col from '../components/ui/Col.astro'
 			))
 		}
 	</Row>
+	<CTA />
 </Layout>
