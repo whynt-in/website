@@ -85,20 +85,12 @@ export const POST: APIRoute = async ({ request }) => {
 			.run()
 
 		// Write to Discord webhook for notifications
-		sendDiscordNotification({
-			webhookUrl: env.DISCORD_WEBHOOK_URL,
-			title: 'New Contact Form Submission',
-			name: `${firstName} ${lastName}`,
-			email: email,
-			phone: phone,
-			message: message,
-			context: {
-				ip: request.headers.get('x-forwarded-for') ?? undefined,
-				userAgent: request.headers.get('user-agent') ?? undefined,
-				url: request.url,
-				method: request.method,
-				referer: request.headers.get('referer') ?? undefined
-			}
+		await sendDiscordNotification({
+			firstName,
+			lastName,
+			email,
+			phone,
+			message
 		})
 
 		return new Response(
