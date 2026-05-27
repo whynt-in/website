@@ -37,7 +37,15 @@ const { classes } = Astro.props
 			<FormField>
 				<InputField type="tel" id="phone" label="Phone Number" />
 			</FormField>
-			<FormField><TextArea id="message" label="Type your message here ..." required /></FormField>
+			<FormField
+				><TextArea
+					id="message"
+					label="Type your message here ..."
+					required
+					maxLength={1024}
+					helperText="Maximum length: 1024 characters"
+				/></FormField
+			>
 			<div class="flex flex-col gap-4">
 				<div id="turnstile-container" class="max-w-full overflow-scroll"></div>
 				<Button style="primary" size="lg" type="submit" disabled>
@@ -54,4 +62,18 @@ const { classes } = Astro.props
 
 	initiateTurnstile()
 	addContactFormSubmitListener(turnstileState)
+
+	document.getElementById('message')?.addEventListener('input', (event) => {
+		const target = event.target as HTMLTextAreaElement
+		const charCount = target.value.length
+
+		if (charCount > 1024) {
+			target.value = target.value.substring(0, 1024)
+		}
+
+		const helperText = document.querySelector('small.input__helper-text') as HTMLElement
+		if (helperText) {
+			helperText.textContent = `Remaining: ${charCount}/1024 characters`
+		}
+	})
 </script>
