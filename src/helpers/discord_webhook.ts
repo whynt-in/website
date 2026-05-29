@@ -15,35 +15,42 @@ export async function sendDiscordNotification(payload: DiscordWebhookPayload) {
 		return
 	}
 
-	await fetch(webhookUrl, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
-			content: [
-				'**New Contact Form Submission 🥳**',
-				`**🗓️ Date:** ${new Date().toLocaleString('en-GB', {
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric',
-					hour: '2-digit',
-					minute: '2-digit',
-					hour12: false,
-					timeZone: 'Asia/Kolkata'
-				})}`,
-				'',
-				`**👤 Name:** ${payload.firstName} ${payload.lastName}`,
-				`**✉️ Email:** ${payload.email}`,
-				payload.phone ? `**☎️ Phone:** ${payload.phone}` : null,
-				'**💬 Message:**',
-				'',
-				payload.message
-			].join('\n')
+	try {
+		const response = await fetch(webhookUrl, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				content: [
+					'**New Contact Form Submission 🥳**',
+					`**🗓️ Date:** ${new Date().toLocaleString('en-GB', {
+						year: 'numeric',
+						month: 'long',
+						day: 'numeric',
+						hour: '2-digit',
+						minute: '2-digit',
+						hour12: false,
+						timeZone: 'Asia/Kolkata'
+					})}`,
+					'',
+					`**👤 Name:** ${payload.firstName} ${payload.lastName}`,
+					`**✉️ Email:** ${payload.email}`,
+					payload.phone ? `**☎️ Phone:** ${payload.phone}` : null,
+					'**💬 Message:**',
+					'',
+					payload.message
+				].join('\n'),
+				allowed_mentions: {
+					parse: []
+				}
+			})
 		})
-	}).then((response) => {
+
 		if (!response.ok) {
 			console.error('Failed to send Discord notification:', response.statusText)
 		}
-	})
+	} catch (error) {
+		console.error('Failed to send Discord notification:', error)
+	}
 }

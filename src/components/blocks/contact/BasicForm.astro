@@ -43,7 +43,7 @@ const { classes } = Astro.props
 					label="Type your message here ..."
 					required
 					maxLength={1024}
-					helperText="Maximum length: 1024 characters"
+					helperText="Remaining: 1024/1024 characters"
 				/></FormField
 			>
 			<div class="flex flex-col gap-4">
@@ -67,13 +67,11 @@ const { classes } = Astro.props
 		const target = event.target as HTMLTextAreaElement
 		const charCount = target.value.length
 
-		if (charCount > 1024) {
-			target.value = target.value.substring(0, 1024)
-		}
-
-		const helperText = document.querySelector('small.input__helper-text') as HTMLElement
+		const helperText = target.parentElement?.querySelector(
+			'small.input__helper-text'
+		) as HTMLElement | null
 		if (helperText) {
-			helperText.textContent = `Remaining: ${charCount}/1024 characters`
+			helperText.textContent = `Remaining: ${1024 - charCount}/1024 characters`
 		}
 	})
 </script>
