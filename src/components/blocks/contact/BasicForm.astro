@@ -71,13 +71,28 @@ const { classes } = Astro.props
 
 	document.getElementById('message')?.addEventListener('input', (event) => {
 		const target = event.target as HTMLTextAreaElement
-		const charCount = target.value.length
 
 		// Target input sanitation to @everyone / @here mentions
-		target.value = target.value
+		const originalValue = target.value
+		const cursorPosition = target.selectionStart ?? 0
+
+		const sanitized = originalValue
 			.replace(/@everyone/g, '@\u200beveryone')
 			.replace(/@here/g, '@\u200bhere')
 
+		if (sanitized !== originalValue) {
+			const originalBeforeCursor = originalValue.slice(0, cursorPosition)
+			const sanitizedBeforeCursor = originalBeforeCursor
+				.replace(/@everyone/g, '@\u200beveryone')
+				.replace(/@here/g, '@\u200bhere')
+
+			const newCursorPosition = sanitizedBeforeCursor.length
+
+			target.value = sanitized
+			target.setSelectionRange(newCursorPosition, newCursorPosition)
+		}
+
+		const charCount = target.value.length
 		const helperText = target.parentElement?.querySelector(
 			'small.input__helper-text'
 		) as HTMLElement | null
