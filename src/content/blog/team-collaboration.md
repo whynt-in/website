@@ -1,6 +1,6 @@
 ---
 title: 'How Custom Internal Tools Improve Team Collaboration'
-pubDate: 2024-03-03T05:00:00Z
+pubDate: 2026-05-10T05:00:00Z
 description: 'Collaboration improves when tools match real workflows. Learn how custom internal software reduces friction, improves visibility, and helps growing teams work faster with less rework.'
 author: 'Gautham Vinayachandran'
 image: '/blog/post-05-cover.webp'

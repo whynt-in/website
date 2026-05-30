@@ -1,3 +1,5 @@
+import { updateSubmitButtonState } from './submit_button'
+
 // Cloudflare Turnstile CAPTCHA state
 export type TurnstileState = {
 	turnstileToken: string | null
@@ -42,17 +44,16 @@ function renderTurnstile() {
 	widgetId = window.turnstile.render(el, {
 		sitekey: '0x4AAAAAADDwM2QRg3d3Kb7u',
 		theme: currentTheme,
-		// Enable submit button on successful validation
 		callback: (token: string) => {
 			turnstileState.turnstileToken = token
 			turnstileState.isCAPTCHAValidated = true
-			document.querySelector('button[type="submit"]')?.removeAttribute('disabled')
+			updateSubmitButtonState(turnstileState.isCAPTCHAValidated)
 		},
 		// Disable submit button on token expiration
 		'expired-callback': () => {
 			turnstileState.turnstileToken = null
 			turnstileState.isCAPTCHAValidated = false
-			document.querySelector('button[type="submit"]')?.setAttribute('disabled', 'true')
+			updateSubmitButtonState(turnstileState.isCAPTCHAValidated)
 		},
 		size: 'flexible'
 	})

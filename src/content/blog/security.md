@@ -1,6 +1,6 @@
 ---
 title: 'Security Basics Every Growing Business Should Put in Place'
-pubDate: 2024-02-10T05:00:00Z
+pubDate: 2026-05-01T05:00:00Z
 description: 'Security does not need to be complicated. Use this SMB security checklist to cover authentication, access control, backups, patching, and recovery from day one.'
 author: 'Gautham Vinayachandran'
 image: '/blog/post-03-cover.webp'
