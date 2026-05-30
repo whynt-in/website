@@ -67,6 +67,11 @@ const { classes } = Astro.props
 		const target = event.target as HTMLTextAreaElement
 		const charCount = target.value.length
 
+		// Target input sanitation to @everyone / @here mentions
+		target.value = target.value
+			.replace(/@everyone/g, '@\u200beveryone')
+			.replace(/@here/g, '@\u200bhere')
+
 		const helperText = target.parentElement?.querySelector(
 			'small.input__helper-text'
 		) as HTMLElement | null
