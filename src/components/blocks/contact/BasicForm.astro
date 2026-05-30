@@ -68,9 +68,6 @@ const { classes } = Astro.props
 	form?.addEventListener('input', () => {
 		updateSubmitButtonState(turnstileState.isCAPTCHAValidated)
 	})
-	form?.addEventListener('change', () => {
-		updateSubmitButtonState(turnstileState.isCAPTCHAValidated)
-	})
 
 	document.getElementById('message')?.addEventListener('input', (event) => {
 		const target = event.target as HTMLTextAreaElement
