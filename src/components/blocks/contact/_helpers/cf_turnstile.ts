@@ -42,11 +42,9 @@ function renderTurnstile() {
 	widgetId = window.turnstile.render(el, {
 		sitekey: '0x4AAAAAADDwM2QRg3d3Kb7u',
 		theme: currentTheme,
-		// Enable submit button on successful validation
 		callback: (token: string) => {
 			turnstileState.turnstileToken = token
 			turnstileState.isCAPTCHAValidated = true
-			document.querySelector('button[type="submit"]')?.removeAttribute('disabled')
 		},
 		// Disable submit button on token expiration
 		'expired-callback': () => {

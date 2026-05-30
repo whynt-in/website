@@ -58,10 +58,19 @@ const { classes } = Astro.props
 
 <script>
 	import { initiateTurnstile, turnstileState } from './_helpers/cf_turnstile'
+	import { updateSubmitButtonState } from './_helpers/submit_button'
 	import { addContactFormSubmitListener } from './_helpers/form_submit_handler'
 
 	initiateTurnstile()
 	addContactFormSubmitListener(turnstileState)
+
+	const form = document.querySelector('form')
+	form?.addEventListener('input', () => {
+		updateSubmitButtonState(turnstileState.isCAPTCHAValidated)
+	})
+	form?.addEventListener('change', () => {
+		updateSubmitButtonState(turnstileState.isCAPTCHAValidated)
+	})
 
 	document.getElementById('message')?.addEventListener('input', (event) => {
 		const target = event.target as HTMLTextAreaElement
