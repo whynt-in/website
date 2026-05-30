@@ -1,6 +1,6 @@
 ---
 title: 'Whynt: Practical Software for Small and Mid-Sized Businesses'
-pubDate: 2024-01-13T05:00:00Z
+pubDate: 2026-04-22T05:00:00Z
 description: 'Learn how Whynt helps small and mid-sized businesses plan, build, launch, and support practical software, websites, and internal tools that keep improving over time.'
 author: 'Gautham Vinayachandran'
 image: '/blog/post-01-cover.webp'

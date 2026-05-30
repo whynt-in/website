@@ -1,6 +1,6 @@
 ---
 title: 'Should Your Business Build a Mobile App? A Practical Decision Framework'
-pubDate: 2024-01-27T05:00:00Z
+pubDate: 2026-04-21T05:00:00Z
 description: 'Not every business needs a mobile app right away. Use this practical framework to decide when mobile will improve workflows, customer service, revenue, and field operations.'
 author: 'Gautham Vinayachandran'
 image: '/blog/post-02-cover.webp'
