@@ -50,7 +50,7 @@ function renderTurnstile() {
 		'expired-callback': () => {
 			turnstileState.turnstileToken = null
 			turnstileState.isCAPTCHAValidated = false
-			document.querySelector('button[type="submit"]')?.setAttribute('disabled', 'true')
+			document.querySelector('#contactForm button[type="submit"]')?.setAttribute('disabled', 'true')
 		},
 		size: 'flexible'
 	})

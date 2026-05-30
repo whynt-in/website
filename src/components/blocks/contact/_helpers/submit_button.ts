@@ -1,5 +1,7 @@
 export function updateSubmitButtonState(turnstileValid: boolean) {
-	const submitButton = document.querySelector<HTMLButtonElement>('button[type="submit"]')
+	const submitButton = document.querySelector<HTMLButtonElement>(
+		'#contactForm button[type="submit"]'
+	)
 
 	if (!submitButton) return
 

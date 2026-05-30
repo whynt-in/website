@@ -1,13 +1,13 @@
 [
 	{
 		"title": "v1.0.6: Security Hardening and Access Controls",
-		"date": "2026-06-15",
+		"date": "2026-05-30",
 		"text": "<p>Security upgrades are now part of our default delivery baseline for all active client systems.</p><ul><li>MFA enforcement for privileged accounts</li><li>Improved audit logging across key workflows</li><li>Backup verification checklist added to maintenance cycles</li></ul>",
 		"image": "/feeds/feed-01.webp"
 	},
 	{
 		"title": "v1.0.5: Website Performance and UX Refresh",
-		"date": "2026-05-29",
+		"date": "2026-05-21",
 		"text": "<p>We rolled out front-end improvements focused on faster load times and cleaner user journeys for business websites.</p><ul><li>Optimized navigation hierarchy for service pages</li><li>Improved accessibility states for forms and buttons</li><li>Reduced layout shift and page load bottlenecks</li></ul>",
 		"image": "/feeds/feed-02.webp"
 	},

@@ -64,7 +64,7 @@ const { classes } = Astro.props
 	initiateTurnstile()
 	addContactFormSubmitListener(turnstileState)
 
-	const form = document.querySelector('form')
+	const form = document.getElementById('contactForm') as HTMLFormElement | null
 	form?.addEventListener('input', () => {
 		updateSubmitButtonState(turnstileState.isCAPTCHAValidated)
 	})
