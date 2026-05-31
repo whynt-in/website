@@ -1,20 +1,42 @@
 ---
 // Loading Component
-// Description: Animated loading indicator with three bouncing dots
+// Description: A classic animated loading indicator
 // Props:
-// - color: Tailwind color class for the dots (default: "bg-blue-700")
+// - size: an integer denoting the size of the spinner
 
 type Props = {
-	color?: string
+	size?: number
 }
 
-const { color = 'bg-primary-500' } = Astro.props
+const { size = 10 } = Astro.props
 ---
 
-<!-- From Uiverse.io by Javierrocadev -->
-<div class="flex flex-row gap-2" role="status" aria-live="polite" aria-label="Loading">
-	<div class={`h-4 w-4 animate-bounce rounded-full ${color}`}></div>
-	<div class={`h-4 w-4 animate-bounce rounded-full ${color} [animation-delay:-.3s]`}></div>
-	<div class={`h-4 w-4 animate-bounce rounded-full ${color} [animation-delay:-.5s]`}></div>
-	<span class="sr-only">Loading...</span>
-</div>
+<span role="status" class=`box-border inline-block size-${size}`>
+	<span aria-hidden="true" class="relative left-1/2 top-1/2 block size-full">
+		{
+			Array.from({ length: 12 }, (_, index) => (
+				<span
+					class="rounded-(--radius) absolute left-[-10%] top-[-3.9%] block h-[8%] w-[24%] bg-current"
+					style={{
+						transform: `rotate(${index * 30}deg) translate(146%)`,
+						animation: 'loading-ui-classic-fade var(--duration, 1.2s) linear infinite',
+						animationDelay: `calc(var(--duration, 1.2s) / 12 * ${index - 12})`
+					}}
+				/>
+			))
+		}
+	</span>
+	<span class="sr-only">Loading</span>
+</span>
+
+<style>
+	@keyframes loading-ui-classic-fade {
+		0% {
+			opacity: 1;
+		}
+
+		100% {
+			opacity: 0.15;
+		}
+	}
+</style>
