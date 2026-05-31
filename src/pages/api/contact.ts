@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro'
 import { env } from 'cloudflare:workers'
 import { validateTurnstile } from '../../helpers/turnstile_validate'
 import { sendDiscordNotification } from '../../helpers/discord_webhook'
+import { sanitizeContent } from '../../helpers/input_sanitizer.ts'
 
 // Disable pre-rendering for dynamic API endpoint
 export const prerender = false
@@ -73,6 +74,15 @@ export const POST: APIRoute = async ({ request }) => {
 			)
 		}
 
+		// Sanitize content before core operations
+		const sanitizedData = sanitizeContent({
+			firstName,
+			lastName,
+			email,
+			phone,
+			message
+		})
+
 		// Save submission to database
 		await env.DB.prepare(
 			`
@@ -81,16 +91,22 @@ export const POST: APIRoute = async ({ request }) => {
         	VALUES (?, ?, ?, ?, ?)
 		`
 		)
-			.bind(firstName, lastName, email, phone || null, message)
+			.bind(
+				sanitizedData.firstName,
+				sanitizedData.lastName,
+				sanitizedData.email,
+				sanitizedData.phone || null,
+				sanitizedData.message
+			)
 			.run()
 
 		// Write to Discord webhook for notifications
 		await sendDiscordNotification({
-			firstName,
-			lastName,
-			email,
-			phone,
-			message
+			firstName: sanitizedData.firstName,
+			lastName: sanitizedData.lastName,
+			email: sanitizedData.email,
+			phone: sanitizedData.phone,
+			message: sanitizedData.message
 		})
 
 		return new Response(
