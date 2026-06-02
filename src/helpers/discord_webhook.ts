@@ -1,5 +1,8 @@
 import { env } from 'cloudflare:workers'
 
+/**
+ * Payload for Discord webhook notifications triggered by contact form submissions.
+ */
 type DiscordWebhookPayload = {
 	firstName: string
 	lastName: string
@@ -8,6 +11,18 @@ type DiscordWebhookPayload = {
 	message: string
 }
 
+/**
+ * Send a formatted notification to a Discord webhook.
+ *
+ * If `DISCORD_WEBHOOK_URL` is not configured the function is a no-op and will
+ * log a warning. The payload is formatted as a readable message containing
+ * the submitter's name, email, optional phone number and message body.
+ *
+ * @param payload - The contact form data to include in the notification.
+ * @returns A promise that resolves once the webhook request completes. Errors
+ *          are caught and logged; this function does not throw for network
+ *          failures to avoid taking down the primary request flow.
+ */
 export async function sendDiscordNotification(payload: DiscordWebhookPayload) {
 	const webhookUrl = env.DISCORD_WEBHOOK_URL
 	if (!webhookUrl) {

@@ -1,5 +1,10 @@
-// Cloudflare Durable Object for rate limiting
-// Enforces per-IP request limits on contact form
+/**
+ * Cloudflare Durable Object implementing a simple per-IP rate limiter.
+ *
+ * The object stores a list of recent request timestamps in Durable Object
+ * storage and enforces a maximum number of submissions within a configured
+ * time window. This is used to protect the contact form endpoint.
+ */
 
 interface Transaction {
 	get(key: string): Promise<any>
@@ -12,13 +17,35 @@ interface DurableObjectState {
 	}
 }
 
+/**
+ * RateLimiter Durable Object
+ *
+ * Constructor receives the Durable Object `state` which provides transactional
+ * storage. The object exposes a `fetch` method compatible with the Durable
+ * Object fetch handler and returns HTTP responses indicating the result of the
+ * rate check.
+ */
 export class RateLimiter {
 	state: DurableObjectState
 
+	/**
+	 * Create a new RateLimiter instance bound to the provided Durable Object state.
+	 * @param state - DurableObject state (provides transactional storage).
+	 */
 	constructor(state: DurableObjectState) {
 		this.state = state
 	}
 
+	/**
+	 * Handle fetch requests routed to this Durable Object.
+	 *
+	 * The method enforces a per-IP submission limit over a rolling time window.
+	 * It stores timestamps in Durable Object storage inside an atomic
+	 * `transaction` callback to avoid race conditions.
+	 *
+	 * @param _request - Incoming request (not inspected for content here).
+	 * @returns An HTTP `Response` indicating success or rate-limit status.
+	 */
 	async fetch(_request: Request): Promise<Response> {
 		const now: number = Date.now()
 

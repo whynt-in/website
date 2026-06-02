@@ -3,10 +3,13 @@ import astroHandler from '@astrojs/cloudflare/entrypoints/server'
 import pgpKey from '../.well-known/pgp-key.txt'
 import securityTxt from '../.well-known/security.txt'
 
+/**
+ * Environment bindings expected by the worker.
+ *
+ * The `RATE_LIMITER` namespace is typed permissively to avoid build-time
+ * coupling to Cloudflare's types while preserving runtime behavior.
+ */
 interface Env {
-	// Use a permissive type for the Durable Object namespace to avoid
-	// build-time type issues related to the Cloudflare types/branding.
-	// The runtime behavior is unchanged.
 	RATE_LIMITER: any
 	DB?: any
 	ASSETS?: any
@@ -14,8 +17,16 @@ interface Env {
 	PUBLIC_GTM_ID?: string
 }
 
-// Cloudflare Worker entry point for Astro SSR
-// with rate limiting on contact form submissions
+/**
+ * Cloudflare Worker entry point for Astro SSR with additional routing
+ * conveniences and a pre-check for rate-limited endpoints.
+ *
+ * The exported default object implements the Cloudflare Workers fetch handler
+ * which delegates most requests to the Astro server entry point but performs
+ * small preflight checks for well-known files and enforces per-IP rate
+ * limiting on `/api/contact` POST requests by delegating to the
+ * `RateLimiter` durable object.
+ */
 export default {
 	async fetch(request: Request, env: Env, ctx: any): Promise<Response> {
 		const url = new URL(request.url)
