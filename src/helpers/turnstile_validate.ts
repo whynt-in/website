@@ -1,6 +1,17 @@
 import { env } from 'cloudflare:workers'
 
-// Validate Turnstile CAPTCHA token with Cloudflare
+/**
+ * Validate a Cloudflare Turnstile token server-side.
+ *
+ * Sends the provided user response token to Cloudflare's Turnstile
+ * verification endpoint together with the secret key from environment
+ * variables. Returns the parsed JSON response from Cloudflare which
+ * typically contains at least a `success` boolean and diagnostic fields.
+ *
+ * @param token - The Turnstile response token provided by the client.
+ * @returns A promise resolving to the verification result object returned
+ *          by Cloudflare (shape depends on the service: includes `success`).
+ */
 export async function validateTurnstile(token: string) {
 	try {
 		// POST token to Cloudflare for server-side verification
