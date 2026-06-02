@@ -54,9 +54,15 @@ export default {
 			const limiter = env.RATE_LIMITER.get(id)
 
 			// Check rate limit before processing form
-			const limitResponse = await limiter.fetch(new Request('https://rate-limit'))
+			let limitResponse: Response | undefined
+			try {
+				limitResponse = await limiter.fetch(new Request('https://rate-limit'))
+			} catch (error) {
+				_rateLimiterFallbackCount += 1
+				console.error('Rate limiter check failed; allowing request through', error)
+			}
 
-			if (limitResponse.status === 429) {
+			if (limitResponse?.status === 429) {
 				return limitResponse
 			}
 		}
@@ -65,5 +71,7 @@ export default {
 		return astroHandler.fetch(request, env as any, ctx)
 	}
 }
+
+let _rateLimiterFallbackCount = 0
 
 export { RateLimiter }
