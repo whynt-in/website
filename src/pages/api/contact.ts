@@ -91,13 +91,7 @@ export const POST: APIRoute = async ({ request }) => {
         	VALUES (?, ?, ?, ?, ?)
 		`
 		)
-			.bind(
-				sanitizedData.firstName,
-				sanitizedData.lastName,
-				sanitizedData.email,
-				sanitizedData.phone || null,
-				sanitizedData.message
-			)
+			.bind(firstName, lastName, email, phone || null, message)
 			.run()
 
 		// Write to Discord webhook for notifications

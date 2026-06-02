@@ -11,12 +11,16 @@ type Props = {
 const { size = 10 } = Astro.props
 ---
 
-<span role="status" class=`box-border inline-block size-${size}`>
+<span
+	role="status"
+	class="box-border inline-block"
+	style={{ width: `${size * 0.25}rem`, height: `${size * 0.25}rem` }}
+>
 	<span aria-hidden="true" class="relative left-1/2 top-1/2 block size-full">
 		{
 			Array.from({ length: 12 }, (_, index) => (
 				<span
-					class="rounded-(--radius) absolute left-[-10%] top-[-3.9%] block h-[8%] w-[24%] bg-current"
+					class="absolute left-[-10%] top-[-3.9%] block h-[8%] w-[24%] rounded-[var(--radius)] bg-current"
 					style={{
 						transform: `rotate(${index * 30}deg) translate(146%)`,
 						animation: 'loading-ui-classic-fade var(--duration, 1.2s) linear infinite',
