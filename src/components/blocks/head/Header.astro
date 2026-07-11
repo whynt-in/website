@@ -10,6 +10,7 @@ import JSONLD from './partials/JSON-LD.astro'
 import { configData } from '../../../config/config'
 
 import { googleAnalyticsMeasurementID } from '../../../config/analytics'
+import TurnstileJs from './partials/Turnstile-js.astro'
 
 // Props
 type Props = {
@@ -46,8 +47,7 @@ const {
 	<meta name="generator" content={Astro.generator} />
 	<meta name="theme-color" content="#134e4a" />
 	<link rel="preconnect" href="https://challenges.cloudflare.com" />
-	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline
-	></script>
+	<TurnstileJs />
 	<JSONLD type="Organization" />
 	<ClientRouter fallback="swap" />
 </head>

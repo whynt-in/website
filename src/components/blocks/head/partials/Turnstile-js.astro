@@ -1,0 +1,9 @@
+---
+const currentPath = Astro.url.pathname
+---
+
+<!-- Cloudflare Turnstile Script -->{
+	currentPath === '/contact/' && (
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline />
+	)
+}
