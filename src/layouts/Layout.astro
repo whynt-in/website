@@ -11,7 +11,6 @@ import Header from '../components/blocks/head/Header.astro'
 import FormSubmissionModal from '../components/blocks/modal/FormSubmissionModal.astro'
 // Analytics and third-party scripts
 import Scriprs from '../components/scripts/LocalScripts.astro'
-import GoogleTagManagerBody from '../components/scripts/googleTagManagerBody.astro'
 // Styles
 import '../styles/global.css'
 // Fonts
@@ -42,7 +41,6 @@ const { title, description, ogImage, noindex, classes } = Astro.props
 			{ [`${classes}`]: classes }
 		]}
 	>
-		<GoogleTagManagerBody />
 		<NavigationBar />
 		<Main>
 			<slot />
