@@ -3,17 +3,44 @@
 import { googleAnalyticsMeasurementID } from '../../config/analytics.ts'
 ---
 
-<script
-	is:inline
-	async
-	src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsMeasurementID}`}></script>
+<script is:inline data-ga-measurement-id={googleAnalyticsMeasurementID} id="ga-loader">
+	const measurementId = document.getElementById('ga-loader').getAttribute('data-ga-measurement-id')
 
-<script is:inline data-ga-measurement-id={googleAnalyticsMeasurementID} id="ga-init">
-	const measurementId = document.getElementById('ga-init').getAttribute('data-ga-measurement-id')
-	window.dataLayer = window.dataLayer || []
-	function gtag() {
-		dataLayer.push(arguments) // eslint-disable-line
+	let loaded = false
+
+	function loadAnalytics() {
+		if (loaded) return
+		loaded = true
+
+		for (const event of ['pointerdown', 'keydown', 'scroll', 'touchstart']) {
+			window.removeEventListener(event, loadAnalytics)
+		}
+
+		const script = document.createElement('script')
+		script.async = true
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`
+
+		script.onload = () => {
+			window.dataLayer = window.dataLayer || []
+
+			window.gtag = function () {
+				window.dataLayer.push(arguments)
+			}
+
+			window.gtag('js', new Date())
+			window.gtag('config', measurementId)
+		}
+
+		document.head.appendChild(script)
 	}
-	gtag('js', new Date())
-	gtag('config', measurementId)
+
+	const options = {
+		once: true,
+		passive: true
+	}
+
+	window.addEventListener('pointerdown', loadAnalytics, options)
+	window.addEventListener('keydown', loadAnalytics, options)
+	window.addEventListener('scroll', loadAnalytics, options)
+	window.addEventListener('touchstart', loadAnalytics, options)
 </script>
