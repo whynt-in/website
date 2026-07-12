@@ -83,7 +83,6 @@
 			}
 		})
 	})
-	let motionQueryBound = false
 
 	const syncScrollAnimations = () => {
 		scrollObserver.disconnect()
@@ -95,12 +94,9 @@
 		document.querySelectorAll('.scroll-animation .col').forEach((element) => {
 			scrollObserver.observe(element)
 		})
-
-		if (!motionQueryBound) {
-			motionQuery.addEventListener('change', syncScrollAnimations)
-			motionQueryBound = true
-		}
 	}
+
+	motionQuery.addEventListener('change', syncScrollAnimations)
 
 	document.addEventListener('DOMContentLoaded', syncScrollAnimations)
 	document.addEventListener('astro:page-loaded', syncScrollAnimations)
