@@ -80,6 +80,7 @@
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
 				entry.target.classList.add('scroll-animated')
+				scrollObserver.unobserve(entry.target)
 			}
 		})
 	})
@@ -99,7 +100,7 @@
 	motionQuery.addEventListener('change', syncScrollAnimations)
 
 	document.addEventListener('DOMContentLoaded', syncScrollAnimations)
-	document.addEventListener('astro:page-loaded', syncScrollAnimations)
+	document.addEventListener('astro:page-load', syncScrollAnimations)
 	document.addEventListener('astro:after-swap', syncScrollAnimations)
 </script>
 
@@ -134,7 +135,7 @@
 			applyTheme()
 			setupThemeSwitcher()
 		})
-		document.addEventListener('astro:page-loaded', () => {
+		document.addEventListener('astro:page-load', () => {
 			applyTheme()
 			setupThemeSwitcher()
 		})
