@@ -81,6 +81,10 @@ export const footerNavigationData: FooterData = {
 					subCategoryLink: '/blog'
 				},
 				{
+					subCategory: 'Alliance Program',
+					subCategoryLink: '/alliance'
+				},
+				{
 					subCategory: 'Careers',
 					subCategoryLink: '/blog'
 				}
