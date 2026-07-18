@@ -1,8 +1,10 @@
+import type { ImageMetadata } from 'astro'
+
 type PortfolioDataType = {
 	title: string
 	subtitle: string
-	image: any
-	link: any
+	image: ImageMetadata
+	link: string
 }
 
 // Images to be shown on portfolio
