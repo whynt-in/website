@@ -1,0 +1,25 @@
+---
+// Page layout and content components
+import Layout from '../layouts/Layout.astro'
+import CTA from '../components/blocks/CTA/BasicLight.astro'
+import Hero from '../components/blocks/hero/PageHeader.astro'
+
+// Alliance page SEO metadata
+const SEO = {
+	title: 'Whynt | The Whynt Alliance Program',
+	description:
+		'The Whynt Alliance is a collaborative network of organizations supported by Whynt, providing strategic guidance, technology, design, and operational expertise to help ambitious teams grow and create lasting impact.',
+	noindex: false
+}
+
+// Hero section title and description
+const header = {
+	title: 'The Whynt <strong>Alliance</strong>.',
+	text: 'Building lasting partnerships with organizations shaping the future.'
+}
+---
+
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
+	<Hero title={header.title} text={header.text} />
+	<CTA />
+</Layout>
