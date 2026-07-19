@@ -12,7 +12,8 @@
 		"deploy": "wrangler deploy",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
-		"format": "prettier . --write"
+		"format": "prettier . --write",
+		"build:fast": "astro build"
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^13.7.0",
