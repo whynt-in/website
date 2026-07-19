@@ -20,17 +20,7 @@ export default defineConfig({
 		build: {
 			// Minify chunks using esbuild
 			minify: 'esbuild',
-			cssMinify: true,
-			// Split chunks to prevent massive singular bundles
-			rollupOptions: {
-				output: {
-					manualChunks(id) {
-						if (id.includes('node_modules')) {
-							return id.toString().split('node_modules/')[1].split('/')[0].toString()
-						}
-					}
-				}
-			}
+			cssMinify: true
 		}
 	}
 })
