@@ -7,11 +7,6 @@
 	"compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
 	"routes": ["whynt.in/*", "www.whynt.in/*"],
 
-	// Enable smart placement
-	"placement": {
-		"mode": "smart"
-	},
-
 	// Enable observability
 	"observability": {
 		"enabled": true,
