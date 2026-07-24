@@ -1,24 +1,26 @@
 [
 	{
 		"header": {
-			"title": "Essential Care",
-			"subtitle": "For small businesses that need a reliable, maintained online presence",
+			"title": "Essential",
+			"subtitle": "Everything you need to keep your website or software secure, reliable, and up to date.",
 			"currency": "₹",
-			"price": "2999",
+			"price": "999",
 			"priceLabel": "month",
-			"priceMontly": "3499",
+			"priceMontly": "1199",
 			"priceLabelMontly": "month",
-			"badge": "Save 14%",
+			"badge": "Save 17%",
 			"buttonName": "Get started",
 			"buttonLink": "/contact"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Uptime monitoring & security updates" },
-				{ "listItem": "Monthly backups & SSL management" },
-				{ "listItem": "Up to 2 content updates per month" },
-				{ "listItem": "Monthly performance report" },
-				{ "listItem": "Email support within 48 hours" }
+				{ "listItem": "Fully managed hosting" },
+				{ "listItem": "Managed business email for up to 5 users" },
+				{ "listItem": "SSL certificate & security monitoring" },
+				{ "listItem": "Automated off-site backups" },
+				{ "listItem": "Security patches & compatibility updates" },
+				{ "listItem": "1 improvement request per month" },
+				{ "listItem": "Support within 2 business days" }
 			]
 		},
 		"footer": {
@@ -29,24 +31,28 @@
 	},
 	{
 		"header": {
-			"title": "Growth",
-			"subtitle": "For growing businesses that need ongoing improvements alongside maintenance",
+			"title": "Business Plus",
+			"subtitle": "Designed for businesses that want continuous improvements, better performance, and peace of mind.",
 			"currency": "₹",
-			"price": "7999",
+			"price": "2499",
 			"priceLabel": "month",
-			"priceMontly": "8999",
+			"priceMontly": "2999",
 			"priceLabelMontly": "month",
-			"badge": "Save 11%",
+			"badge": "Most Popular",
 			"buttonName": "Get started",
 			"buttonLink": "/contact"
 		},
 		"body": {
 			"listItems": [
-				{ "listItem": "Everything in Essential Care" },
-				{ "listItem": "Up to 8 hours of development & improvements" },
-				{ "listItem": "SEO health checks & speed optimisation" },
-				{ "listItem": "Feature updates and third-party integrations" },
-				{ "listItem": "Priority support within 24 hours" }
+				{ "listItem": "Everything in Essential" },
+				{ "listItem": "Managed business email accounts" },
+				{ "listItem": "5 improvement requests per month" },
+				{ "listItem": "SEO & performance optimization" },
+				{ "listItem": "Feature enhancements" },
+				{ "listItem": "Third-party integrations" },
+				{ "listItem": "Proactive uptime monitoring & incident response" },
+				{ "listItem": "Monthly analytics report" },
+				{ "listItem": "Priority support within 1 business day" }
 			]
 		},
 		"footer": {
@@ -57,24 +63,29 @@
 	},
 	{
 		"header": {
-			"title": "Professional",
-			"subtitle": "For businesses actively building and scaling their digital systems",
-			"currency": "₹",
-			"price": "14999",
-			"priceLabel": "month",
-			"priceMontly": "16999",
-			"priceLabelMontly": "month",
-			"badge": "Save 12%",
-			"buttonName": "Get started",
+			"title": "Enterprise",
+			"subtitle": "A fully managed technology partnership for organizations with custom software and advanced operational needs.",
+			"currency": "",
+			"price": "Custom",
+			"priceLabel": "",
+			"priceMontly": "Let's talk",
+			"priceLabelMontly": "",
+			"badge": "Custom",
+			"buttonName": "Schedule a consultation",
 			"buttonLink": "/contact"
 		},
 		"body": {
 			"listItems": [
 				{ "listItem": "Everything in Growth" },
-				{ "listItem": "Up to 20 hours of development per month" },
-				{ "listItem": "Custom feature builds and workflow automation" },
-				{ "listItem": "Dedicated point of contact" },
-				{ "listItem": "Same-day priority support" }
+				{ "listItem": "Unlimited improvement requests*" },
+				{ "listItem": "Dedicated account manager" },
+				{ "listItem": "Custom software development" },
+				{ "listItem": "Managed business email for your organization" },
+				{ "listItem": "Advanced API & third-party integrations" },
+				{ "listItem": "Infrastructure & deployment management" },
+				{ "listItem": "Service Level Agreement (SLA)" },
+				{ "listItem": "Emergency & weekend support" },
+				{ "listItem": "Technology consulting & roadmap planning" }
 			]
 		},
 		"footer": {
