@@ -37,7 +37,15 @@ const { classes } = Astro.props
 			<FormField>
 				<InputField type="tel" id="phone" label="Phone Number" />
 			</FormField>
-			<FormField><TextArea id="message" label="Type your message here ..." required /></FormField>
+			<FormField
+				><TextArea
+					id="message"
+					label="Type your message here ..."
+					required
+					maxLength={1024}
+					helperText="Remaining: 1024/1024 characters"
+				/></FormField
+			>
 			<div class="flex flex-col gap-4">
 				<div id="turnstile-container" class="max-w-full overflow-scroll"></div>
 				<Button style="primary" size="lg" type="submit" disabled>
@@ -50,8 +58,25 @@ const { classes } = Astro.props
 
 <script>
 	import { initiateTurnstile, turnstileState } from './_helpers/cf_turnstile'
+	import { updateSubmitButtonState } from './_helpers/submit_button'
 	import { addContactFormSubmitListener } from './_helpers/form_submit_handler'
 
 	initiateTurnstile()
 	addContactFormSubmitListener(turnstileState)
+
+	const form = document.getElementById('contactForm') as HTMLFormElement | null
+	form?.addEventListener('input', () => {
+		updateSubmitButtonState(turnstileState.isCAPTCHAValidated)
+	})
+
+	document.getElementById('message')?.addEventListener('input', (event) => {
+		const target = event.target as HTMLTextAreaElement
+		const charCount = target.value.length
+		const helperText = target.parentElement?.querySelector(
+			'small.input__helper-text'
+		) as HTMLElement | null
+		if (helperText) {
+			helperText.textContent = `Remaining: ${1024 - charCount}/1024 characters`
+		}
+	})
 </script>

@@ -1,6 +1,6 @@
 ---
 title: 'How Client Feedback Improves Software Delivery for SMBs'
-pubDate: 2024-03-30T05:00:00Z
+pubDate: 2026-05-20T05:00:00Z
 description: 'At Whynt, client feedback directly shapes scope, timelines, and delivery. See how SMB software teams can use feedback to ship better products faster and with fewer surprises.'
 author: 'Ashtav Prabhakaran'
 image: '/blog/post-04-cover.webp'

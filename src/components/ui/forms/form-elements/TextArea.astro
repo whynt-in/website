@@ -30,9 +30,20 @@ type Props = {
 	disabled?: boolean
 	value?: string
 	classes?: string
+	maxLength?: number
 }
-const { id, label, iconName, iconPosition, helperText, required, disabled, value, classes } =
-	Astro.props
+const {
+	id,
+	label,
+	iconName,
+	iconPosition,
+	helperText,
+	required,
+	disabled,
+	value,
+	classes,
+	maxLength
+} = Astro.props
 ---
 
 <div
@@ -50,6 +61,7 @@ const { id, label, iconName, iconPosition, helperText, required, disabled, value
 		required={required}
 		disabled={disabled}
 		value={value}
+		maxlength={maxLength}
 		class="input__field peer"></textarea>
 	<label
 		for={id}

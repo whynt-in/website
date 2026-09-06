@@ -75,33 +75,33 @@
 
 <!-- Scroll animations -->
 <script>
-	const initializeObserver = () => {
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('scroll-animated')
-				}
-			})
+	const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+	const scrollObserver = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('scroll-animated')
+				scrollObserver.unobserve(entry.target)
+			}
 		})
+	})
 
-		const elements = document.querySelectorAll('.scroll-animation .col')
+	const syncScrollAnimations = () => {
+		scrollObserver.disconnect()
 
-		elements.forEach((element) => {
-			observer.observe(element)
+		if (motionQuery.matches) {
+			return
+		}
+
+		document.querySelectorAll('.scroll-animation .col').forEach((element) => {
+			scrollObserver.observe(element)
 		})
 	}
 
-	document.addEventListener('DOMContentLoaded', () => {
-		initializeObserver()
-	})
+	motionQuery.addEventListener('change', syncScrollAnimations)
 
-	document.addEventListener('astro:page-loaded', () => {
-		initializeObserver()
-	})
-
-	document.addEventListener('astro:after-swap', () => {
-		initializeObserver()
-	})
+	document.addEventListener('DOMContentLoaded', syncScrollAnimations)
+	document.addEventListener('astro:page-load', syncScrollAnimations)
+	document.addEventListener('astro:after-swap', syncScrollAnimations)
 </script>
 
 <!-- Light/Dark mode  -->
@@ -132,10 +132,6 @@
 			}
 		}
 		document.addEventListener('DOMContentLoaded', () => {
-			applyTheme()
-			setupThemeSwitcher()
-		})
-		document.addEventListener('astro:page-loaded', () => {
 			applyTheme()
 			setupThemeSwitcher()
 		})

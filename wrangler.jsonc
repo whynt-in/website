@@ -3,7 +3,7 @@
 
 	"name": "corporate-website",
 	"main": "src/worker.ts",
-	"compatibility_date": "2026-05-22",
+	"compatibility_date": "2026-06-16",
 	"compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
 	"routes": ["whynt.in/*", "www.whynt.in/*"],
 
@@ -52,7 +52,6 @@
 
 	// Environment variables
 	"vars": {
-		"PUBLIC_GA_TRACKING_ID": "G-VZ7P3NDLLY",
-		"PUBLIC_GTM_ID": "GTM-W7WGV6X3"
+		"PUBLIC_GA_TRACKING_ID": "G-VZ7P3NDLLY"
 	}
 }

@@ -1,0 +1,42 @@
+---
+// Page layout and content components
+import Layout from '../layouts/Layout.astro'
+import CTA from '../components/blocks/CTA/BasicLight.astro'
+import Col from '../components/ui/Col.astro'
+import Row from '../components/ui/Row.astro'
+import Card from '../components/ui/cards/FeatureCard.astro'
+import Hero from '../components/blocks/hero/PageHeader.astro'
+
+// Alliance page SEO metadata
+const SEO = {
+	title: 'Whynt | The Whynt Alliance Program',
+	description:
+		'The Whynt Alliance is a collaborative network of organizations supported by Whynt, providing strategic guidance, technology, design, and operational expertise to help ambitious teams grow and create lasting impact.',
+	noindex: false
+}
+
+// Hero section title and description
+const header = {
+	title: 'Whynt <strong>Alliance</strong> Program.',
+	text: 'Building lasting partnerships with organizations shaping the future.'
+}
+
+// Alliances data
+import { alliancesData } from '../data/typescript-files/alliancesData'
+---
+
+<Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
+	<Hero title={header.title} text={header.text} />
+	<Row classes="py-24 px-8 md:px-32 lg:px-12 xl:px-24">
+		{
+			alliancesData.map((items) => (
+				<Col span="4" classes="flex flex-col gap-6">
+					{items.map((item) => (
+						<Card title={item.title} subtitle={item.subtitle} image={item.image} link={item.link} />
+					))}
+				</Col>
+			))
+		}
+	</Row>
+	<CTA />
+</Layout>
