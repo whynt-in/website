@@ -8,16 +8,15 @@ type PortfolioDataType = {
 }
 
 // Images to be shown on portfolio
-import whyntLogoImage from '../../assets/portfolio/whynt-logo.webp'
+import irysEventsLogoImage from '../../assets/portfolio/irys-logo.webp'
 
 export const portfolioData: Array<Array<PortfolioDataType>> = [
 	[
 		{
-			title: 'Whynt — Custom Software, Websites & Digital Growth',
-			subtitle:
-				'Practical software, modern websites, and results-driven marketing that help small and mid-sized businesses scale with reliable execution.',
-			image: whyntLogoImage,
-			link: 'https://whynt.in/'
+			title: 'Irys Event Planners — Luxury Event Planning',
+			subtitle: 'Premium event planning services for the most discerning clients.',
+			image: irysEventsLogoImage,
+			link: 'https://iryseventplanners.com/'
 		}
 	]
 ]
