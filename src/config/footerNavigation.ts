@@ -48,16 +48,16 @@ export const footerNavigationData: FooterData = {
 			category: 'Product',
 			subCategories: [
 				{
+					subCategory: 'Pricing',
+					subCategoryLink: '/pricing'
+				},
+				{
 					subCategory: 'Features',
 					subCategoryLink: '/features'
 				},
 				{
 					subCategory: 'FAQ',
 					subCategoryLink: '/faq'
-				},
-				{
-					subCategory: 'Pricing',
-					subCategoryLink: '/pricing'
 				},
 				{
 					subCategory: 'Changelog',
@@ -70,17 +70,17 @@ export const footerNavigationData: FooterData = {
 			]
 		},
 		{
-			category: 'About us',
+			category: 'More on Whynt',
 			subCategories: [
 				{
-					subCategory: 'About us',
-					subCategoryLink: '/'
-				},
-				{
-					subCategory: 'News',
+					subCategory: 'Blog',
 					subCategoryLink: '/blog'
 				},
 				{
+					subCategory: 'Portfolio',
+					subCategoryLink: '/portfolio'
+        },
+        {
 					subCategory: 'Alliance Program',
 					subCategoryLink: '/alliance'
 				},
@@ -94,16 +94,16 @@ export const footerNavigationData: FooterData = {
 			category: 'Get in touch',
 			subCategories: [
 				{
-					subCategory: 'Contact',
+					subCategory: 'Contact page',
 					subCategoryLink: '/contact'
 				},
 				{
-					subCategory: 'Support',
-					subCategoryLink: '/contact'
+					subCategory: 'WhatsApp Business',
+					subCategoryLink: 'https://wa.me/919497648580'
 				},
 				{
-					subCategory: 'Join us',
-					subCategoryLink: '/contact'
+					subCategory: 'Give us a call',
+					subCategoryLink: 'tel:+919497648580'
 				}
 			]
 		}

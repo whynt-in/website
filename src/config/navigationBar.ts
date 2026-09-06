@@ -39,12 +39,13 @@ export const navigationBarData: NavData = {
 	navItems: [
 		{ name: 'Home', link: '/' },
 		{ name: 'Pricing', link: '/pricing' },
-		{ name: 'Features', link: '/features' },
+		{ name: 'Portfolio', link: '/portfolio' },
 		{
 			name: 'Resources',
 			link: '#',
 			submenu: [
 				{ name: 'Blog', link: '/blog' },
+				{ name: 'Features', link: '/features' },
 				{ name: 'Alliance Program', link: '/alliance' },
 				{ name: 'FAQ', link: '/faq' },
 				{ name: 'Changelog', link: '/changelog' },
@@ -53,5 +54,5 @@ export const navigationBarData: NavData = {
 		},
 		{ name: 'Contact', link: '/contact' }
 	],
-	navActions: [{ name: 'Try it now', link: '/contact', style: 'primary', size: 'lg' }]
+	navActions: [{ name: 'Get Started', link: '/contact', style: 'primary', size: 'lg' }]
 }
