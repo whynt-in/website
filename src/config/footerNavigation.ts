@@ -79,8 +79,8 @@ export const footerNavigationData: FooterData = {
 				{
 					subCategory: 'Portfolio',
 					subCategoryLink: '/portfolio'
-        },
-        {
+				},
+				{
 					subCategory: 'Alliance Program',
 					subCategoryLink: '/alliance'
 				},
