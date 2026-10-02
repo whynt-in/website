@@ -9,7 +9,7 @@ type AllianceDataType = {
 
 // Images to be shown on alliances page
 import teenSquad from '../../assets/alliances/teensquad-icon.webp'
-import luucesse from '../../assets/alliances/luucesse.webp'
+import luucesse from '../../assets/alliances/luucesse-logo.webp'
 
 export const alliancesData: Array<Array<AllianceDataType>> = [
 	[
