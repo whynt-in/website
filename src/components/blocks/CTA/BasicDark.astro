@@ -15,7 +15,6 @@ import ChipNotification from '../../ui/ChipNotification.astro'
 import Highlight from '../../ui/Highlight.astro'
 
 // Content
-import ctaImage from '../../../assets/cta-dark-bg.webp'
 import badge from '../../../assets/badge.svg'
 ---
 
@@ -26,14 +25,13 @@ import badge from '../../../assets/badge.svg'
 			<CTA
 				title="Built for teams that ship faster"
 				text="Whynt helps businesses design, build, and maintain software systems that streamline operations and improve productivity. Start building better workflows today."
-				mode="dark"
-				bg={ctaImage}
 			>
 				<ChipNotification radius="rounded-full" classes="mb-6 box">
 					<img src={badge.src} alt="Trusted Systems" class="h-12 w-12" slot="button" />
-					<span class="text-justify">Trusted by <Highlight>growing</Highlight> businesses</span>
+					<span class="text-justify">Trusted by <Highlight>20+</Highlight> growing businesses.</span
+					>
 				</ChipNotification>
-				<Button size="lg" style="primary" link="/contact">Get started now!</Button>
+				<Button size="lg" style="primary" link="/contact">Let&apos;s Get Started!</Button>
 			</CTA>
 		</Col>
 		<Col span="1" />
