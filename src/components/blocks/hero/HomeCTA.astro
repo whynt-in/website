@@ -33,27 +33,31 @@ const tools = [
 		<Col span="2" />
 		<Col span="8" align="center">
 			<ChipNotification radius="rounded-full" classes="mb-6">
-				<strong>200+</strong> supported tools.
+				200+ supported tools
 				<AvatarGroup avatars={tools} radius="rounded-full" slot="button" />
 			</ChipNotification>
-			<h1>Modern softwares for <strong>modern</strong> businesses.</h1>
+			<h1>Engineering What&apos;s Next<strong>.</strong></h1>
 
-			<p class="pb-0 text-lg">Built, maintained, and scaled for your business by Whynt.</p>
-			<Button size="lg" link="/portfolio">Check out our portfolio</Button>
+			<p class="pb-0 text-lg">
+				Technology for your business. Built, maintained, and scaled by Whynt.
+			</p>
+			<div class="flex items-center justify-center gap-6">
+				<Button size="lg" link="/contact/">Let&apos;s Get Started &rarr;</Button>
+				<a href="/portfolio/" class="hidden text-lg md:block">Our Portfolio &rarr;</a>
+			</div>
 		</Col>
 		<Col span="2" />
 		<Col span="2" />
 		<Col span="8">
 			<Picture
-				priority
-				quality={100}
+				quality={80}
 				src={heroImage}
 				alt="Whynt Example software image."
 				class="translate-y-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
 				width={heroImage.width}
 				height={heroImage.height}
-			/></Col
-		>
+			/>
+		</Col>
 		<Col span="2" />
 	</Row>
 </Section>

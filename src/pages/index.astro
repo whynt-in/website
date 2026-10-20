@@ -11,9 +11,6 @@ import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
 import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 
-// Homepage background image asset
-import testimonialBackground from '../assets/testimonial-bg-01.webp'
-
 // SEO metadata for homepage
 const SEO = {
 	title: 'Whynt | Software, Websites & Digital Marketing That Grow With Your Business',
@@ -26,7 +23,7 @@ const SEO = {
 <Layout title={SEO.title} description={SEO.description} noindex={SEO.noindex}>
 	<Hero />
 	<Features />
-	<Testimonial bg={testimonialBackground} bgPosition="right" />
+	<Testimonial />
 	<HighlightBlocks />
 	<CTA />
 </Layout>

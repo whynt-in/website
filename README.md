@@ -4,7 +4,7 @@ This repository contains the Whynt marketing website and content-driven pages bu
 
 ## What It Is
 
-Whynt is a small-scale, product-focused tech company that builds and maintains software for small and mid-sized businesses. This site presents the brand, services, blog, FAQ, pricing, terms, and changelog content.
+Whynt is a small-scale, product-focused tech company that builds and maintains software for small and mid-sized businesses. This site presents the brand, services, blog, FAQ, pricing, and terms.
 
 ## Tech Stack
 
@@ -20,7 +20,7 @@ Whynt is a small-scale, product-focused tech company that builds and maintains s
 - `src/pages` - route entry points for the main site pages, including the homepage, service pages, legal pages, and blog index.
 - `src/components` - reusable UI blocks, page sections, and layout primitives used across the site.
 - `src/content` - content collections for markdown-driven pages, such as the blog posts.
-- `src/data` - structured JSON data that powers sections like FAQs, changelog entries, and other repeated content.
+- `src/data` - structured JSON data that powers sections like FAQs, and other repeated content.
 - `src/layouts` - top-level page shells that wrap content pages with shared metadata and structure.
 - `src/styles` - global styles and shared CSS.
 - `public` - static files served directly, including images and other assets that do not need processing.
@@ -49,7 +49,6 @@ After running `bun run dev`, open the local URL shown in the terminal.
 
 - Blog posts live in `src/content/blog`.
 - FAQ content lives in `src/data/json-files/faqData.json`.
-- Changelog content lives in `src/data/json-files/changelogData.json`.
 - Page-level SEO metadata is defined in each file under `src/pages`.
 
 ## License
