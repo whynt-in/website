@@ -17,7 +17,7 @@ export const alliancesData: Array<Array<AllianceDataType>> = [
 			subtitle:
 				'Luucesse is a digital marketing agency that specializes in content creation, advertising, and lead generation.',
 			image: luucesse,
-			link: 'https://www.instagram.com/luucesse/'
+			link: 'https://luucesse.whynt.in/'
 		}
 	]
 ]
